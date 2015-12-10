@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using RPG_Game.States;
 
 namespace RPG_Game
 {
@@ -63,7 +64,10 @@ namespace RPG_Game
                 Exit();
 
             // TODO: Add your update logic here
-
+            if (StateManager.CurrentState != null)
+            {
+                StateManager.CurrentState.Update(gameTime);
+            }
             base.Update(gameTime);
         }
 
@@ -76,7 +80,10 @@ namespace RPG_Game
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            if (StateManager.CurrentState != null)
+            {
+                StateManager.CurrentState.Draw(gameTime);
+            }
             base.Draw(gameTime);
         }
     }
