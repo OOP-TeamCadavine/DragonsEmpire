@@ -5,7 +5,8 @@ using System.Text;
 
 namespace RPG_Game.States
 {
-    class StateManager
+    public class StateManager
     {
+        public static State CurrentState { get; set; }
     }
 }

@@ -1,11 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Microsoft.Xna.Framework;
+using System;
 
 namespace RPG_Game.States
 {
-    class MainMenuState
+    public class MainMenuState : State
     {
+        public override void Draw(GameTime gameTime)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
