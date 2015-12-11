@@ -1,4 +1,6 @@
-﻿using RPG_Game.Interfaces;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using RPG_Game.Interfaces;
 
 namespace RPG_Game.GameObjects.Items
 {
@@ -18,6 +20,13 @@ namespace RPG_Game.GameObjects.Items
         {
             return string.Format("{0}: Health restore ({1})", this.GetType().Name, this.HealthRestore);
         }
+        public override void Update(GameTime gameTime)
+        {
+        }
+        public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+        {
+        }
+        
     }
 }
 
