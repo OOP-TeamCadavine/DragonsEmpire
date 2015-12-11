@@ -15,7 +15,7 @@ namespace RPG_Game.GameObjects.Characters.Player
 
         float time;
         // duration of time to show each frame
-        float frameTime = 0.2f;
+        float frameTime = 0.1f;
         // an index of the current frame being shown
         int frameIndex;
         // total number of frames in our spritesheet
