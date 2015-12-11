@@ -38,8 +38,11 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameObjects\Characters\Character.cs" />
+    <Compile Include="GameObjects\Characters\Player\Archangel.cs" />
+    <Compile Include="GameObjects\Characters\Player\Player.cs" />
     <Compile Include="GameObjects\GameObject.cs" />
     <Compile Include="GameObjects\Items\HealthPosion.cs" />
     <Compile Include="GameObjects\Items\Item.cs" />
@@ -50,6 +53,7 @@
     <Compile Include="Interfaces\IDrawable.cs" />
     <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IHeal.cs" />
+    <Compile Include="Interfaces\IMovable.cs" />
     <Compile Include="Interfaces\IUpdateable.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />

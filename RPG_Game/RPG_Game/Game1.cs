@@ -17,6 +17,9 @@ namespace RPG_Game
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.PreferredBackBufferHeight = 700;
+            graphics.PreferredBackBufferWidth = 1200;
+            graphics.ApplyChanges();
         }
 
         /// <summary>
@@ -28,7 +31,7 @@ namespace RPG_Game
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            StateManager.CurrentState = new GameState();
             base.Initialize();
         }
 
@@ -40,6 +43,7 @@ namespace RPG_Game
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            Assets.Init(this);
 
             // TODO: use this.Content to load your game content here
         }
@@ -82,7 +86,7 @@ namespace RPG_Game
             // TODO: Add your drawing code here
             if (StateManager.CurrentState != null)
             {
-                StateManager.CurrentState.Draw(gameTime);
+                StateManager.CurrentState.Draw(spriteBatch, gameTime);
             }
             base.Draw(gameTime);
         }
