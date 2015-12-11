@@ -4,11 +4,11 @@ using RPG_Game.Interfaces;
 
 namespace RPG_Game.GameObjects.Items
 {
-    public class HealthPosion : Item, IHeal
+    public class HealthPotion : Item, IHeal
     {
         private const int DefaultHealthRestore = 20;
 
-        public HealthPosion(Point position)
+        public HealthPotion(Point position)
             : base(position)
         {
             this.HealthRestore = DefaultHealthRestore;
@@ -20,11 +20,14 @@ namespace RPG_Game.GameObjects.Items
         {
             return string.Format("{0}: Health restore ({1})", this.GetType().Name, this.HealthRestore);
         }
+
         public override void Update(GameTime gameTime)
         {
         }
+
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
+            spriteBatch.Draw(Assets.healthPotion, new Vector2(this.Position.X, this.Position.Y));
         }
     }
 }

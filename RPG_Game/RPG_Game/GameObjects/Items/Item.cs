@@ -12,7 +12,9 @@ namespace RPG_Game.GameObjects.Items
         }
 
         public Point Position { get; set; }
+
         public abstract void Draw(SpriteBatch spriteBatch, GameTime gameTime);
+
         public abstract void Update(GameTime gameTime);
     }
 }

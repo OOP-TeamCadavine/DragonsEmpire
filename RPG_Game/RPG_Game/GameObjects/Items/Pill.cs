@@ -20,11 +20,14 @@ namespace RPG_Game.GameObjects.Items
         {
             return string.Format("{0}: Health restore ({1})", this.GetType().Name, this.HealthRestore);
         }
+
         public override void Update(GameTime gameTime)
         {
         }
+
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
+            spriteBatch.Draw(Assets.pill, new Vector2(this.Position.X, this.Position.Y));
         }
         
     }

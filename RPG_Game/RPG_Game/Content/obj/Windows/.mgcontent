@@ -4,9 +4,11 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/arhangel.png</File>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/background.jpg</File>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/fly.png</File>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/flyleft.png</File>
+    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/arhangel.png</File>
+    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/background.jpg</File>
+    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/fly.png</File>
+    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/flyleft.png</File>
+    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/pill.png</File>
+    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/healthPotion.png</File>
   </SourceFiles>
 </SourceFileCollection>

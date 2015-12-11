@@ -12,12 +12,16 @@ namespace RPG_Game
         public static Texture2D archangelFly;
         public static Texture2D archangelFlyLeft;
         public static Texture2D archangel;
+        public static Texture2D pill;
+        public static Texture2D healthPotion;
         public static void Init(Game1 game)
         {
             gameBackground = game.Content.Load<Texture2D>("background");
             archangelFly = game.Content.Load<Texture2D>("fly");
             archangelFlyLeft = game.Content.Load<Texture2D>("flyleft");
             archangel = game.Content.Load<Texture2D>("arhangel");
+            pill = game.Content.Load<Texture2D>("pill");
+            healthPotion = game.Content.Load<Texture2D>("healthPotion");
         }
     }
 }
