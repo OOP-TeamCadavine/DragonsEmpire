@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/arhangel.png</File>
+    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/background.jpg</File>
+    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/fly.png</File>
+    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/flyleft.png</File>
+  </SourceFiles>
+</SourceFileCollection>
