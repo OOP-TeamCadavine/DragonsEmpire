@@ -1,18 +1,28 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using RPG_Game.GameObjects.Characters.Player;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace RPG_Game.States
 {
     public class GameState : State
     {
-        public override void Draw(GameTime gameTime)
+        Player player;
+        public GameState()
         {
-            throw new NotImplementedException();
+            player = new Archangel(new Point(0, 0));
         }
 
         public override void Update(GameTime gameTime)
         {
-            throw new NotImplementedException();
+            this.player.Update(gameTime);
+        }
+        public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+        {
+            spriteBatch.Begin();
+            spriteBatch.Draw(Assets.gameBackground, Vector2.Zero);
+            this.player.Draw(spriteBatch, gameTime);
+            spriteBatch.End();
         }
     }
 }
