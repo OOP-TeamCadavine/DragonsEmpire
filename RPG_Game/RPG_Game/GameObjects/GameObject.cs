@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using RPG_Game.Interfaces;
 
 namespace RPG_Game.GameObjects
 {
-    public abstract class GameObject
+    public abstract class GameObject : IGameObject
     {
         private Point position;
 
