@@ -1,11 +1,7 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-namespace RPG_Game.Interfaces
+﻿namespace RPG_Game.Interfaces
 {
-    public interface IGameObject : Interfaces.IUpdateable, Interfaces.IDrawable
+    public interface IGameObject : IUpdateable, IDrawable
     {
         Point Position { get; set; }
-
-        
     }
 }

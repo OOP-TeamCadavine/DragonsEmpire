@@ -27,7 +27,7 @@ namespace RPG_Game.GameObjects.Items
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            spriteBatch.Draw(Assets.healthPotion, new Vector2(this.Position.X, this.Position.Y));
+            spriteBatch.Draw(Assets.healthPotion, new Vector2(this.Position.XCoord, this.Position.YCoord));
         }
     }
 }

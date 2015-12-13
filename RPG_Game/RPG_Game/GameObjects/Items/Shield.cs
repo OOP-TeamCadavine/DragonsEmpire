@@ -30,7 +30,7 @@ namespace Items
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            spriteBatch.Draw(Assets.shield, new Vector2(this.Position.X, this.Position.Y));
+            spriteBatch.Draw(Assets.shield, new Vector2(this.Position.XCoord, this.Position.YCoord));
         }
     }
 }

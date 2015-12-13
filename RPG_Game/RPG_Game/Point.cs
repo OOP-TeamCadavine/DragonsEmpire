@@ -2,15 +2,15 @@
 {
     public struct Point
     {
-        public Point(int x, int y)
+        public Point(int xCoord, int yCoord)
             : this()
         {
-            this.X = x;
-            this.Y = y;
+            this.XCoord = xCoord;
+            this.YCoord = yCoord;
         }
 
-        public int X { get; set; }
+        public int XCoord { get; set; }
 
-        public int Y { get; set; }
+        public int YCoord { get; set; }
     }
 }

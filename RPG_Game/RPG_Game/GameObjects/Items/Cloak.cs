@@ -1,6 +1,5 @@
 ﻿using RPG_Game.GameObjects.Items;
 using RPG_Game.Interfaces;
-using System;
 using Microsoft.Xna.Framework.Graphics;
 using RPG_Game;
 using Microsoft.Xna.Framework;
@@ -30,7 +29,7 @@ namespace Items
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            spriteBatch.Draw(Assets.cloak, new Vector2(this.Position.X, this.Position.Y));
+            spriteBatch.Draw(Assets.cloak, new Vector2(this.Position.XCoord, this.Position.YCoord));
         }     
     }
 }
