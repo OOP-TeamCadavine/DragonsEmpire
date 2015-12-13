@@ -30,8 +30,7 @@ namespace Items
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            //TODO : Add images
-            throw new NotImplementedException();
+            spriteBatch.Draw(Assets.shield, new Vector2(this.Position.X, this.Position.Y));
         }
     }
 }

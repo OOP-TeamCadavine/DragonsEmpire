@@ -7,11 +7,11 @@ using Microsoft.Xna.Framework;
 
 namespace Items
 {
-    public class Cloack : Item, IDefenseRestore
+    public class Cloak : Item, IDefenseRestore
     {
         private const int DefaultDefenseRestore = 15;
 
-        public Cloack(RPG_Game.Point position)
+        public Cloak(RPG_Game.Point position)
             : base(position)
         {
             this.DefenseRestore = DefaultDefenseRestore;
@@ -30,8 +30,7 @@ namespace Items
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            //TODO : Add images
-            throw new NotImplementedException();
+            spriteBatch.Draw(Assets.cloak, new Vector2(this.Position.X, this.Position.Y));
         }     
     }
 }

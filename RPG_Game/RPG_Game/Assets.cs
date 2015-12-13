@@ -14,6 +14,9 @@ namespace RPG_Game
         public static Texture2D archangel;
         public static Texture2D pill;
         public static Texture2D healthPotion;
+        public static Texture2D cloak;
+        public static Texture2D shield;
+
         public static void Init(Game1 game)
         {
             gameBackground = game.Content.Load<Texture2D>("background");
@@ -22,6 +25,8 @@ namespace RPG_Game
             archangel = game.Content.Load<Texture2D>("arhangel");
             pill = game.Content.Load<Texture2D>("pill");
             healthPotion = game.Content.Load<Texture2D>("healthPotion");
+            cloak = game.Content.Load<Texture2D>("cloak");
+            shield = game.Content.Load<Texture2D>("shield");
         }
     }
 }
