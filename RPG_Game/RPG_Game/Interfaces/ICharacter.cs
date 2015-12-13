@@ -1,6 +1,6 @@
 ﻿namespace RPG_Game.Interfaces
 {
-    public interface ICharacter : IAttack, IDefense, IGameObject
+    public interface ICharacter : IAttack, IDefense
     {
         int HealthPoints { get; set; }
 
