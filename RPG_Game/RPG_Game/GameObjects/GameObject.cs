@@ -7,8 +7,6 @@ namespace RPG_Game.GameObjects
 
     public abstract class GameObject : IGameObject
     {
-        public Point position;
-
         protected GameObject(Point position)
         {
             this.Position = position;

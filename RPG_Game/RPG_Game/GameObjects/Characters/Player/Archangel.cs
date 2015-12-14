@@ -49,57 +49,37 @@ namespace RPG_Game.GameObjects.Characters.Player
         {
             if (isMovingRight || isMovingUp || isMovingDown)
             {
-                spriteBatch.Draw(Assets.archangelFly, new Vector2(this.position.XCoord, this.position.YCoord), source, Color.White, 0.0f,
+                spriteBatch.Draw(Assets.archangelFly, new Vector2(this.Position.XCoord, this.Position.YCoord), source, Color.White, 0.0f,
       Origin, 1.0f, SpriteEffects.None, 0.0f);
             }
             else if (isMovingLeft)
             {
-                spriteBatch.Draw(Assets.archangelFlyLeft, new Vector2(this.position.XCoord, this.position.YCoord), source, Color.White, 0.0f,
+                spriteBatch.Draw(Assets.archangelFlyLeft, new Vector2(this.Position.XCoord, this.Position.YCoord), source, Color.White, 0.0f,
       Origin, 1.0f, SpriteEffects.None, 0.0f);
             }
             else
             {
-                spriteBatch.Draw(Assets.archangel, new Vector2(this.position.XCoord, this.position.YCoord));
+                spriteBatch.Draw(Assets.archangel, new Vector2(this.Position.XCoord, this.Position.YCoord));
             }
         }
 
         public override void Move()
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+            if (this.isMovingLeft)
             {
-                this.isMovingLeft = true;
-                this.position.XCoord -= speed;
+                this.Position = new Point(this.Position.XCoord - speed, this.Position.YCoord);
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            if (this.isMovingRight)
             {
-                this.isMovingRight = true;
-                this.position.XCoord += speed;
+                this.Position = new Point(this.Position.XCoord + speed, this.Position.YCoord);
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+            if (this.isMovingUp)
             {
-                this.isMovingUp = true;
-                this.position.YCoord -= speed;
+                this.Position = new Point(this.Position.XCoord, this.Position.YCoord - speed);
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            if (this.isMovingDown)
             {
-                this.isMovingDown = true;
-                this.position.YCoord += speed;
-            }
-            if (Keyboard.GetState().IsKeyUp(Keys.Left))
-            {
-                this.isMovingLeft = false;
-            }
-            if (Keyboard.GetState().IsKeyUp(Keys.Right))
-            {
-                this.isMovingRight = false;
-            }
-            if (Keyboard.GetState().IsKeyUp(Keys.Up))
-            {
-                this.isMovingUp = false;
-            }
-            if (Keyboard.GetState().IsKeyUp(Keys.Down))
-            {
-                this.isMovingDown = false;
+                this.Position = new Point(this.Position.XCoord, this.Position.YCoord + speed);
             }
         }
 

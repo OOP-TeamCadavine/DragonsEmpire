@@ -9,7 +9,7 @@ namespace RPG_Game.States
 {
     public class GameState : State
     {
-        Player player;
+        public static Player player;
         Item pill;
         Item healthPotion;
         Item cloak;
@@ -21,13 +21,14 @@ namespace RPG_Game.States
             player = new Archangel(new Point(0, 0));
             pill = new Pill(new Point(rnd.Next(50, 1150), rnd.Next(50, 650)));
             healthPotion = new HealthPotion(new Point(rnd.Next(50, 1150), rnd.Next(50, 650)));
-            cloak = new Cloak(new Point (rnd.Next(50,1150), rnd.Next(50,650)));
+            cloak = new Cloak(new Point(rnd.Next(50, 1150), rnd.Next(50, 650)));
             shield = new Shield(new Point(rnd.Next(50, 1150), rnd.Next(50, 650)));
         }
 
         public override void Update(GameTime gameTime)
         {
-            this.player.Update(gameTime);
+            KeyboardHandler.HandleInput();
+            player.Update(gameTime);
             this.pill.Update(gameTime);
             this.healthPotion.Update(gameTime);
             this.cloak.Update(gameTime);
@@ -41,8 +42,8 @@ namespace RPG_Game.States
             this.healthPotion.Draw(spriteBatch, gameTime);
             this.cloak.Draw(spriteBatch, gameTime);
             this.shield.Draw(spriteBatch, gameTime);
-            this.player.Draw(spriteBatch, gameTime);
-            
+            player.Draw(spriteBatch, gameTime);
+
             spriteBatch.End();
         }
     }
