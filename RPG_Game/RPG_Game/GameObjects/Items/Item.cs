@@ -6,12 +6,12 @@ namespace RPG_Game.GameObjects.Items
 {
     public abstract class Item : IGameObject
     {
-        protected Item(Point position)
+        protected Item(Position position)
         {
             this.Position = position;
         }
 
-        public Point Position { get; set; }
+        public Position Position { get; set; }
 
         public abstract void Draw(SpriteBatch spriteBatch, GameTime gameTime);
 

@@ -4,7 +4,7 @@ namespace RPG_Game.GameObjects.Characters
 {
     public abstract class Character : GameObject, ICharacter
     {
-        protected Character(Point position, int attackPoints, int defensePoints, int healthPoints, int damage)
+        protected Character(Position position, int attackPoints, int defensePoints, int healthPoints, int damage)
             : base(position)
         {
             this.AttackPoints = attackPoints;

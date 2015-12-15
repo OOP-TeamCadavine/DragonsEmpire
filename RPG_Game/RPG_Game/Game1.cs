@@ -30,6 +30,7 @@ namespace RPG_Game
         /// </summary>
         protected override void Initialize()
         {
+            //StateManager.CurrentState = new MainMenuState();
             // TODO: Add your initialization logic here
             StateManager.CurrentState = new GameState();
             base.Initialize();
@@ -68,6 +69,8 @@ namespace RPG_Game
                 Exit();
 
             // TODO: Add your update logic here
+            
+            
             if (StateManager.CurrentState != null)
             {
                 StateManager.CurrentState.Update(gameTime);
@@ -88,6 +91,7 @@ namespace RPG_Game
             {
                 StateManager.CurrentState.Draw(spriteBatch, gameTime);
             }
+          
             base.Draw(gameTime);
         }
     }

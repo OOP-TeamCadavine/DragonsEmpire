@@ -11,11 +11,11 @@ namespace RPG_Game.GameObjects.Characters.Enemy
         private const int DefaultAttack = 25;
         private const int DefaultDefense = 25;
 
-        public Dragon(Point position)
+        public Dragon(Position position)
             : this(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage)
         {
         }
-        public Dragon(Point position, int attackPoints, int defensePoints, int healthPoints, int damage)
+        public Dragon(Position position, int attackPoints, int defensePoints, int healthPoints, int damage)
             : base(position, attackPoints, defensePoints, healthPoints, damage)
         {
         }

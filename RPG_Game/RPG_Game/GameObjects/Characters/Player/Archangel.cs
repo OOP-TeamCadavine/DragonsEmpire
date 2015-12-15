@@ -26,11 +26,11 @@ namespace RPG_Game.GameObjects.Characters.Player
         Rectangle source;
         private readonly Vector2 Origin = Vector2.Zero;
 
-        public Archangel(Point position)
+        public Archangel(Position position)
             : this(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage, DefaultSpeed)
         {
         }
-        public Archangel(Point position, int attackPoints, int defensePoints, int healthPoints, int damage, int speed)
+        public Archangel(Position position, int attackPoints, int defensePoints, int healthPoints, int damage, int speed)
             : base(position, attackPoints, defensePoints, healthPoints, damage, speed)
         {
         }
@@ -67,19 +67,19 @@ namespace RPG_Game.GameObjects.Characters.Player
         {
             if (this.isMovingLeft)
             {
-                this.Position = new Point(this.Position.XCoord - speed, this.Position.YCoord);
+                this.Position = new Position(this.Position.XCoord - speed, this.Position.YCoord);
             }
             if (this.isMovingRight)
             {
-                this.Position = new Point(this.Position.XCoord + speed, this.Position.YCoord);
+                this.Position = new Position(this.Position.XCoord + speed, this.Position.YCoord);
             }
             if (this.isMovingUp)
             {
-                this.Position = new Point(this.Position.XCoord, this.Position.YCoord - speed);
+                this.Position = new Position(this.Position.XCoord, this.Position.YCoord - speed);
             }
             if (this.isMovingDown)
             {
-                this.Position = new Point(this.Position.XCoord, this.Position.YCoord + speed);
+                this.Position = new Position(this.Position.XCoord, this.Position.YCoord + speed);
             }
         }
 

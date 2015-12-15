@@ -16,6 +16,11 @@ namespace RPG_Game
         public static Texture2D healthPotion;
         public static Texture2D cloak;
         public static Texture2D shield;
+        public static Texture2D mainMenuImage;
+        public static Texture2D buttonPlay;
+        public static Texture2D buttonScore;
+        public static Texture2D buttonExit;
+
 
         public static void Init(Game1 game)
         {
@@ -27,6 +32,10 @@ namespace RPG_Game
             healthPotion = game.Content.Load<Texture2D>("healthPotion");
             cloak = game.Content.Load<Texture2D>("cloak");
             shield = game.Content.Load<Texture2D>("shield");
+            mainMenuImage = game.Content.Load<Texture2D>("DragonsEmpire");
+            buttonPlay = game.Content.Load<Texture2D>("buttonPlay");
+            buttonScore = game.Content.Load<Texture2D>("buttonScore");
+            buttonExit = game.Content.Load<Texture2D>("buttonExit");
         }
     }
 }

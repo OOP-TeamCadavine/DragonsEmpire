@@ -10,7 +10,7 @@ namespace Items
     {
         private const int DefaultDefenseRestore = 15;
 
-        public Cloak(RPG_Game.Point position)
+        public Cloak(RPG_Game.Position position)
             : base(position)
         {
             this.DefenseRestore = DefaultDefenseRestore;

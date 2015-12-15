@@ -1,8 +1,8 @@
 ﻿namespace RPG_Game
 {
-    public struct Point
+    public struct Position
     {
-        public Point(int xCoord, int yCoord)
+        public Position(int xCoord, int yCoord)
             : this()
         {
             this.XCoord = xCoord;

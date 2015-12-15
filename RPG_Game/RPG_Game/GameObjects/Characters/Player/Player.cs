@@ -11,7 +11,7 @@ namespace RPG_Game.GameObjects.Characters.Player
         protected int speed;
 
 
-        protected Player(Point position, int attackPoints, int defensePoints, int healthPoints, int damage, int speed)
+        protected Player(Position position, int attackPoints, int defensePoints, int healthPoints, int damage, int speed)
             : base(position, attackPoints, defensePoints, healthPoints, damage)
         {
             this.speed = speed;

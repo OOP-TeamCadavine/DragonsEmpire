@@ -18,11 +18,11 @@ namespace RPG_Game.States
         public GameState()
         {
             Random rnd = new Random();
-            player = new Archangel(new Point(0, 0));
-            pill = new Pill(new Point(rnd.Next(50, 1150), rnd.Next(50, 650)));
-            healthPotion = new HealthPotion(new Point(rnd.Next(50, 1150), rnd.Next(50, 650)));
-            cloak = new Cloak(new Point(rnd.Next(50, 1150), rnd.Next(50, 650)));
-            shield = new Shield(new Point(rnd.Next(50, 1150), rnd.Next(50, 650)));
+            player = new Archangel(new Position(0, 0));
+            pill = new Pill(new Position(rnd.Next(50, 1150), rnd.Next(50, 650)));
+            healthPotion = new HealthPotion(new Position(rnd.Next(50, 1150), rnd.Next(50, 650)));
+            cloak = new Cloak(new Position(rnd.Next(50, 1150), rnd.Next(50, 650)));
+            shield = new Shield(new Position(rnd.Next(50, 1150), rnd.Next(50, 650)));
         }
 
         public override void Update(GameTime gameTime)

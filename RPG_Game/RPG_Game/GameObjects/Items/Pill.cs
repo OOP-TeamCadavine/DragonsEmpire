@@ -8,7 +8,7 @@ namespace RPG_Game.GameObjects.Items
     {
         private const int DefaultHealthRestore = 10;
 
-        public Pill(Point position)
+        public Pill(Position position)
             : base(position)
         {
             this.HealthRestore = DefaultHealthRestore;

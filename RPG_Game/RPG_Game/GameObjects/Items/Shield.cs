@@ -11,7 +11,7 @@ namespace Items
     {
         private const int DefaultDefenseRestore = 10;
 
-        public Shield(RPG_Game.Point position)
+        public Shield(RPG_Game.Position position)
             : base(position)
         {
             this.DefenseRestore = DefaultDefenseRestore;
