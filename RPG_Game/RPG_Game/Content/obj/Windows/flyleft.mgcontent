@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/flyleft.png</SourceFile>
-  <SourceTime>2015-12-12T20:07:44.7631775+02:00</SourceTime>
-  <DestFile>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/bin/Windows/flyleft.xnb</DestFile>
-  <DestTime>2015-12-15T15:57:30.4921537+02:00</DestTime>
+  <SourceFile>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/flyleft.png</SourceFile>
+  <SourceTime>2015-12-16T15:09:13.4829215+02:00</SourceTime>
+  <DestFile>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/bin/Windows/flyleft.xnb</DestFile>
+  <DestTime>2015-12-16T15:10:54.8168055+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-29T20:14:44+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
