@@ -16,7 +16,7 @@ namespace RPG_Game.States
     {
         public static Player player;
 
-        public const int MinLength = 50;
+        public const int MinLength = 100;
         public const int MapWidth = 1150;
         public const int MapHeight = 650;
         private const int NumberOfEnemies = 3;

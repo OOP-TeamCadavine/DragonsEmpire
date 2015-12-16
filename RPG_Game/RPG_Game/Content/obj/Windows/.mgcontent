@@ -4,7 +4,6 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-<<<<<<< HEAD
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/arhangel.png</File>
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/background.jpg</File>
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/fly.png</File>
@@ -20,19 +19,5 @@
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/blueDragon.png</File>
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/blackDragon.png</File>
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/goldenDragon.png</File>
-=======
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/arhangel.png</File>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/background.jpg</File>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/fly.png</File>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/flyleft.png</File>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/pill.png</File>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/healthPotion.png</File>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/cloak.png</File>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/shield.png</File>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/DragonsEmpire.png</File>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/buttonExit.png</File>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/buttonPlay.png</File>
-    <File>D:/SoftUni/OOP/GameRPG/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/buttonScore.png</File>
->>>>>>> e557b6a7038061d3a2839a8d4cb0ed6252476e52
   </SourceFiles>
 </SourceFileCollection>
