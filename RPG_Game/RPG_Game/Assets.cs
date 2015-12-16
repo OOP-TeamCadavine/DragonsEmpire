@@ -13,7 +13,7 @@ namespace RPG_Game
         public static Texture2D archangelFlyLeft;
         public static Texture2D archangel;
         public static Texture2D pill;
-        public static Texture2D healthPotion;
+        public static Texture2D soup;
         public static Texture2D cloak;
         public static Texture2D shield;
         public static Texture2D mainMenuImage;
@@ -36,7 +36,7 @@ namespace RPG_Game
             goldenDragon = game.Content.Load<Texture2D>("goldenDragon");
 
             pill = game.Content.Load<Texture2D>("pill");
-            healthPotion = game.Content.Load<Texture2D>("healthPotion");
+            soup = game.Content.Load<Texture2D>("soup");
             cloak = game.Content.Load<Texture2D>("cloak");
             shield = game.Content.Load<Texture2D>("shield");
 

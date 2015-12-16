@@ -48,12 +48,12 @@ namespace RPG_Game.States
         private static void GenerateItems(IList<IGameObject> items)
         {
             Item pill = new Pill(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
-            Item healthPotion = new HealthPotion(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
+            Item healthSoup = new HealthSoup(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
             Item cloak = new Cloak(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
             Item shield = new Shield(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
 
             items.Add(pill);
-            items.Add(healthPotion);
+            items.Add(healthSoup);
             items.Add(cloak);
             items.Add(shield);
         }

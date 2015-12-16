@@ -1,8 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using RPG_Game;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework.Input;
 using RPG_Game.Events;
 

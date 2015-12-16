@@ -1,3 +1,4 @@
-﻿﻿using RPG_Game.Events;
-
-public delegate void ButtonClickedEventHandler(object sender, ButtonClickedEventArgs eventArgs);
+﻿namespace RPG_Game.Events
+{
+    public delegate void ButtonClickedEventHandler(object sender, ButtonClickedEventArgs eventArgs);
+}

@@ -9,7 +9,6 @@
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/fly.png</File>
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/flyleft.png</File>
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/pill.png</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/healthPotion.png</File>
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/cloak.png</File>
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/shield.png</File>
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/DragonsEmpire.png</File>
@@ -19,5 +18,6 @@
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/blueDragon.png</File>
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/blackDragon.png</File>
     <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/goldenDragon.png</File>
+    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/soup.png</File>
   </SourceFiles>
 </SourceFileCollection>

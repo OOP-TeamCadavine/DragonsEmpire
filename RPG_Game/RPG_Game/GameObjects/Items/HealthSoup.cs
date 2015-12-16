@@ -6,11 +6,11 @@ using RPG_Game.Attributes;
 namespace RPG_Game.GameObjects.Items
 {
     [Item]
-    public class HealthPotion : Item, IHeal
+    public class HealthSoup : Item, IHeal
     {
-        private const int DefaultHealthRestore = 20;
+        private const int DefaultHealthRestore = 100;
 
-        public HealthPotion(Position position)
+        public HealthSoup(Position position)
             : base(position)
         {
             this.HealthRestore = DefaultHealthRestore;
@@ -29,7 +29,7 @@ namespace RPG_Game.GameObjects.Items
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            spriteBatch.Draw(Assets.healthPotion, new Vector2(this.Position.XCoord, this.Position.YCoord));
+            spriteBatch.Draw(Assets.soup, new Vector2(this.Position.XCoord, this.Position.YCoord));
         }
     }
 }
