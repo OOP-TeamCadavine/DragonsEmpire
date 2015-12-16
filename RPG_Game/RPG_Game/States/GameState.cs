@@ -60,8 +60,6 @@ namespace RPG_Game.States
                  .Where(t => t.CustomAttributes
                      .Any(a => a.AttributeType == typeof(ItemAttribute)))
                      .ToArray();
-
-            
         }
 
         public override void Update(GameTime gameTime)
