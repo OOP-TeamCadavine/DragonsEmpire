@@ -28,12 +28,11 @@ namespace RPG_Game.GameObjects.Characters.Enemy
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            throw new NotImplementedException();
+            spriteBatch.Draw(Assets.blueDragon, new Vector2(this.Position.XCoord, this.Position.YCoord));
         }
 
         public override void Update(GameTime gameTime)
-        {
-            throw new NotImplementedException();
+        {  
         }
     }
 }

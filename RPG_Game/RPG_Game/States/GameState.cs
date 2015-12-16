@@ -8,78 +8,73 @@ using RPG_Game.Interfaces;
 using System.Reflection;
 using System.Linq;
 using RPG_Game.Attributes;
+using RPG_Game.GameObjects.Characters.Enemy;
 
 namespace RPG_Game.States
 {
     public class GameState : State
     {
         public static Player player;
-        Item pill;
-        Item healthPotion;
-        Item cloak;
-        Item shield;
-        public const int MapWidth = 1200;
-        public const int MapHeight = 700;
-        private const int NumberOfEnemies = 2;
+
+        public const int MinLength = 50;
+        public const int MapWidth = 1150;
+        public const int MapHeight = 650;
+        private const int NumberOfEnemies = 3;
         private const int NumberOfItems = 3;
-        private readonly IList<IGameObject> enemies;
-        private readonly IList<IGameObject> items;
+
+        private readonly IList<IGameObject> entities = new List<IGameObject>();
 
         private static readonly Random Rand = new Random();
 
         public GameState()
-        {
-
-
-
-
-            Random rnd = new Random();
+        { 
             player = new Archangel(new Position(0, 0));
-            pill = new Pill(new Position(rnd.Next(50, 1150), rnd.Next(50, 650)));
-            healthPotion = new HealthPotion(new Position(rnd.Next(50, 1150), rnd.Next(50, 650)));
-            cloak = new Cloak(new Position(rnd.Next(50, 1150), rnd.Next(50, 650)));
-            shield = new Shield(new Position(rnd.Next(50, 1150), rnd.Next(50, 650)));
+           
+            GenerateEnemies(this.entities);
+            GenerateItems(this.entities);
         }
 
-
-        public static IList<IGameObject> GenerateEntities()
+        private static void GenerateEnemies(IList<IGameObject> enemies)
         {
-            IList<IGameObject> entities = new List<IGameObject>();
+            Enemy blueDragon = new BlueDragon(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
+            Enemy blackDragon = new BlackDragon(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
+            Enemy goldenDragon = new GoldenDragon(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
 
-            //GenerateEnemies(entities);
-            GenerateItems(entities);
-
-            return entities;
+            enemies.Add(blackDragon);
+            enemies.Add(blueDragon);
+            enemies.Add(goldenDragon);
         }
 
-        // TODO: finish the method + method for GenerateEnemies
-        private static void GenerateItems(IList<IGameObject> entities)
+        private static void GenerateItems(IList<IGameObject> items)
         {
-            var itemTypes = Assembly.GetExecutingAssembly()
-                 .GetTypes()
-                 .Where(t => t.CustomAttributes
-                     .Any(a => a.AttributeType == typeof(ItemAttribute)))
-                     .ToArray();
+            Item pill = new Pill(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
+            Item healthPotion = new HealthPotion(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
+            Item cloak = new Cloak(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
+            Item shield = new Shield(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
+
+            items.Add(pill);
+            items.Add(healthPotion);
+            items.Add(cloak);
+            items.Add(shield);
         }
 
         public override void Update(GameTime gameTime)
         {
             KeyboardHandler.HandleInput();
-            player.Update(gameTime);
-            this.pill.Update(gameTime);
-            this.healthPotion.Update(gameTime);
-            this.cloak.Update(gameTime);
-            this.shield.Update(gameTime);
+            player.Update(gameTime);     
+
         }
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(Assets.gameBackground, Vector2.Zero);
-            this.pill.Draw(spriteBatch, gameTime);
-            this.healthPotion.Draw(spriteBatch, gameTime);
-            this.cloak.Draw(spriteBatch, gameTime);
-            this.shield.Draw(spriteBatch, gameTime);
+
+            spriteBatch.Draw(Assets.gameBackground, Vector2.Zero);        
             player.Draw(spriteBatch, gameTime);
+
+            foreach (var entity in entities)
+            {
+                entity.Draw(spriteBatch, gameTime);
+            }
 
             spriteBatch.End();
         }
