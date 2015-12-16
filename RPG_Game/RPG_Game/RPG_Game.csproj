@@ -39,9 +39,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets.cs" />
+    <Compile Include="Attributes\EnemyAttribute.cs" />
+    <Compile Include="Attributes\ItemAttribute.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameObjects\Characters\Character.cs" />
-    <Compile Include="GameObjects\Characters\Enemy\Dragon.cs" />
+    <Compile Include="GameObjects\Characters\Enemy\BlackDragon.cs" />
+    <Compile Include="GameObjects\Characters\Enemy\BlueDragon.cs" />
+    <Compile Include="GameObjects\Characters\Enemy\GoldenDragon.cs" />
     <Compile Include="GameObjects\Characters\Enemy\Enemy.cs" />
     <Compile Include="GameObjects\Characters\Player\Archangel.cs" />
     <Compile Include="GameObjects\Characters\Player\Player.cs" />

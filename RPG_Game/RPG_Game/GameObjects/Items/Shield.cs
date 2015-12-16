@@ -1,17 +1,16 @@
-﻿using RPG_Game.GameObjects.Items;
-using RPG_Game.Interfaces;
-using System;
+﻿using RPG_Game.Interfaces;
 using Microsoft.Xna.Framework.Graphics;
-using RPG_Game;
+using RPG_Game.Attributes;
 using Microsoft.Xna.Framework;
 
-namespace Items
+namespace RPG_Game.GameObjects.Items
 {
+    [Item]
     public class Shield : Item, IDefenseRestore
     {
         private const int DefaultDefenseRestore = 10;
 
-        public Shield(RPG_Game.Position position)
+        public Shield(Position position)
             : base(position)
         {
             this.DefenseRestore = DefaultDefenseRestore;

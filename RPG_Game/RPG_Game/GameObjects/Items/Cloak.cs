@@ -1,16 +1,16 @@
-﻿using RPG_Game.GameObjects.Items;
-using RPG_Game.Interfaces;
+﻿using RPG_Game.Interfaces;
 using Microsoft.Xna.Framework.Graphics;
-using RPG_Game;
 using Microsoft.Xna.Framework;
+using RPG_Game.Attributes;
 
-namespace Items
+namespace RPG_Game.GameObjects.Items
 {
+    [Item]
     public class Cloak : Item, IDefenseRestore
     {
         private const int DefaultDefenseRestore = 15;
 
-        public Cloak(RPG_Game.Position position)
+        public Cloak(Position position)
             : base(position)
         {
             this.DefenseRestore = DefaultDefenseRestore;

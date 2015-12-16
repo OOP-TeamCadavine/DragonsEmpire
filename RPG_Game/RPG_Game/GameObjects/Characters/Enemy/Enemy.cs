@@ -2,7 +2,7 @@
 {
     public abstract class Enemy : Character
     {
-        public Enemy(Position position, int attackPoints, int defensePoints, int healthPoints, int damage)
+        protected Enemy(Position position, int attackPoints, int defensePoints, int healthPoints, int damage)
             : base(position, attackPoints, defensePoints, healthPoints, damage)
         {                
         }        

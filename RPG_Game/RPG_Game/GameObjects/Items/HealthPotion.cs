@@ -1,9 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RPG_Game.Interfaces;
+using RPG_Game.Attributes;
 
 namespace RPG_Game.GameObjects.Items
 {
+    [Item]
     public class HealthPotion : Item, IHeal
     {
         private const int DefaultHealthRestore = 20;
