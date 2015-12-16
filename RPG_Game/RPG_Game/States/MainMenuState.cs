@@ -4,18 +4,17 @@ using System;
 using RPG_Game;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Input;
+using RPG_Game.Events;
 
 namespace RPG_Game.States
 {
     public class MainMenuState : State
-    {
-        public delegate void ButtonClicked(Texture2D button);
+    {        
+        public event ButtonClickedEventHandler ButtonClicked;
 
-        public event ButtonClicked OnClick;
-
-        Rectangle buttonPlayArea = new Rectangle(650, 200, 650, 400);
-        Rectangle buttonScoreArea = new Rectangle(650, 300, 650, 400);
-        Rectangle buttonExitArea = new Rectangle(650, 400, 650, 400);
+        Rectangle buttonPlayArea = new Rectangle(870, 400, 204, 63);
+        Rectangle buttonScoreArea = new Rectangle(870, 500, 204, 63);
+        Rectangle buttonExitArea = new Rectangle(870, 600, 204, 63);
 
         public MainMenuState()
         {
@@ -28,6 +27,7 @@ namespace RPG_Game.States
             spriteBatch.Draw(Assets.buttonPlay, buttonPlayArea, Color.White);
             spriteBatch.Draw(Assets.buttonScore, buttonScoreArea, Color.White);
             spriteBatch.Draw(Assets.buttonExit, buttonExitArea, Color.White);
+            
             spriteBatch.End();
         }
 
@@ -36,7 +36,28 @@ namespace RPG_Game.States
             if (buttonPlayArea.Contains(new Point(Mouse.GetState().X, Mouse.GetState().Y)) 
                 && Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
-                OnClick(Assets.buttonPlay);
+                this.OnButtonClicked(ButtonNames.Play);
+            }
+
+            if (buttonScoreArea.Contains(new Point(Mouse.GetState().X, Mouse.GetState().Y))
+                && Mouse.GetState().LeftButton == ButtonState.Pressed)
+            {
+                this.OnButtonClicked(ButtonNames.Score);
+            }
+
+            if (buttonExitArea.Contains(new Point(Mouse.GetState().X, Mouse.GetState().Y))
+                && Mouse.GetState().LeftButton == ButtonState.Pressed)
+            {
+                this.OnButtonClicked(ButtonNames.Exit);
+            }
+        }
+
+        protected void OnButtonClicked(ButtonNames button)
+        {
+            if (this.ButtonClicked != null)
+            {
+                ButtonClickedEventArgs args = new ButtonClickedEventArgs(button);
+                this.ButtonClicked(this, args);
             }
         }
     }

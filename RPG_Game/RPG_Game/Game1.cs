@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using RPG_Game.Events;
 using RPG_Game.States;
 
 namespace RPG_Game
@@ -32,7 +33,10 @@ namespace RPG_Game
         {
             //StateManager.CurrentState = new MainMenuState();
             // TODO: Add your initialization logic here
-            StateManager.CurrentState = new GameState();
+            this.IsMouseVisible = true;
+            MainMenuState menu = new MainMenuState();
+            menu.ButtonClicked += new ButtonClickedEventHandler(MainMenu_ButtonClicked);
+            StateManager.CurrentState = menu;            
             base.Initialize();
         }
 
@@ -93,6 +97,25 @@ namespace RPG_Game
             }
           
             base.Draw(gameTime);
+        }
+
+        private void MainMenu_ButtonClicked(object sender, ButtonClickedEventArgs eventArgs)
+        {
+            switch (eventArgs.Button)
+            {
+                case ButtonNames.Play:
+                    StateManager.CurrentState = new GameState();
+                    break;
+                    /* ScoreState not implemented yet!
+                case ButtonNames.Score:
+                    StateManager.CurrentState = new ScoreState();
+                    break;
+                    */
+                case ButtonNames.Exit:
+                    this.Exit();
+                    break;
+
+            }
         }
     }
 }
