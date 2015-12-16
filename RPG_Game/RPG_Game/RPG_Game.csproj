@@ -41,6 +41,9 @@
     <Compile Include="Assets.cs" />
     <Compile Include="Attributes\EnemyAttribute.cs" />
     <Compile Include="Attributes\ItemAttribute.cs" />
+    <Compile Include="Events\ButtonClickedEventArgs.cs" />
+    <Compile Include="Events\ButtonClickedEventHandler.cs" />
+    <Compile Include="Events\Buttons.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameObjects\Characters\Character.cs" />
     <Compile Include="GameObjects\Characters\Enemy\BlackDragon.cs" />
