@@ -17,6 +17,7 @@ namespace RPG_Game
         public static Texture2D cloak;
         public static Texture2D shield;
         public static Texture2D sword; //
+        public static Texture2D konay; //
         public static Texture2D mainMenuImage;
         public static Texture2D buttonPlay;
         public static Texture2D buttonScore;
@@ -41,6 +42,7 @@ namespace RPG_Game
             cloak = game.Content.Load<Texture2D>("cloak");
             shield = game.Content.Load<Texture2D>("shield");
             sword = game.Content.Load<Texture2D>("sword"); //
+            konay = game.Content.Load<Texture2D>("konay"); //
 
             mainMenuImage = game.Content.Load<Texture2D>("DragonsEmpire");
             buttonPlay = game.Content.Load<Texture2D>("buttonPlay");
