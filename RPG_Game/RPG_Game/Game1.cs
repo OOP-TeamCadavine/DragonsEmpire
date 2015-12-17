@@ -30,8 +30,7 @@ namespace RPG_Game
         /// and initialize them as well.
         /// </summary>
         protected override void Initialize()
-        {
-            //StateManager.CurrentState = new MainMenuState();
+        {     
             // TODO: Add your initialization logic here
             this.IsMouseVisible = true;
             MainMenuState menu = new MainMenuState();

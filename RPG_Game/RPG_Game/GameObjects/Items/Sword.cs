@@ -6,7 +6,7 @@ using RPG_Game.Attributes;
 namespace RPG_Game.GameObjects.Items
 {
     [Item]
-    public class Sword : Item, IAttackBoost //
+    public class Sword : Item, IAttackBoost 
     {
         private const int DefaultAttackBoost = 50;
 

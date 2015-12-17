@@ -4,20 +4,22 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/arhangel.png</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/background.jpg</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/fly.png</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/flyleft.png</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/pill.png</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/cloak.png</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/shield.png</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/DragonsEmpire.png</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/buttonExit.png</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/buttonPlay.png</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/buttonScore.png</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/blueDragon.png</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/blackDragon.png</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/goldenDragon.png</File>
-    <File>D:/RPG_Game/RPG_Game/RPG_Game/Content/soup.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/arhangel.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/background.jpg</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/fly.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/flyleft.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/pill.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/cloak.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/shield.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/DragonsEmpire.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/buttonExit.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/buttonPlay.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/buttonScore.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/blueDragon.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/blackDragon.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/goldenDragon.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/soup.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/konay.png</File>
+    <File>C:/Users/Tedi/Desktop/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/sword.png</File>
   </SourceFiles>
 </SourceFileCollection>
