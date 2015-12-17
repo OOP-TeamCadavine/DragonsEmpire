@@ -51,11 +51,13 @@ namespace RPG_Game.States
             Item healthSoup = new HealthSoup(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
             Item cloak = new Cloak(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
             Item shield = new Shield(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight)));
+            Item sword = new Sword(new Position(Rand.Next(MinLength, MapWidth), Rand.Next(MinLength, MapHeight))); //
 
             items.Add(pill);
             items.Add(healthSoup);
             items.Add(cloak);
             items.Add(shield);
+            items.Add(sword); //
         }
 
         public override void Update(GameTime gameTime)

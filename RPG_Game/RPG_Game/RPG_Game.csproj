@@ -58,7 +58,9 @@
     <Compile Include="GameObjects\Items\Item.cs" />
     <Compile Include="GameObjects\Items\Pill.cs" />
     <Compile Include="GameObjects\Items\Shield.cs" />
+    <Compile Include="GameObjects\Items\Sword.cs" />
     <Compile Include="Interfaces\IAttack.cs" />
+    <Compile Include="Interfaces\IAttackBoost.cs" />
     <Compile Include="Interfaces\ICharacter.cs" />
     <Compile Include="Interfaces\IDefense.cs" />
     <Compile Include="Interfaces\IDefenseRestore.cs" />
