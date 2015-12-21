@@ -9,9 +9,10 @@ namespace RPG_Game.GameObjects.Items
     public class Konay : Item, IAttackBoost 
     {
         private const int DefaultAttackBoost = 23;
+        private static readonly Texture2D image = Assets.konay;
 
         public Konay(Position position)
-            : base(position)
+            : base(position, image)
         {
             this.AttackBoost = DefaultAttackBoost;
         }
@@ -23,13 +24,6 @@ namespace RPG_Game.GameObjects.Items
             return string.Format("{0}: Attack boosted ({1})", this.GetType().Name, this.AttackBoost);
         }
 
-        public override void Update(GameTime gameTime)
-        {
-        }
-
-        public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
-        {
-            spriteBatch.Draw(Assets.konay, new Vector2(this.Position.XCoord, this.Position.YCoord));
-        }
+              
     }
 }

@@ -9,9 +9,10 @@ namespace RPG_Game.GameObjects.Items
     public class Pill : Item, IHeal
     {
         private const int DefaultHealthRestore = 10;
+        private static readonly Texture2D image = Assets.pill;
 
         public Pill(Position position)
-            : base(position)
+            : base(position, image)
         {
             this.HealthRestore = DefaultHealthRestore;
         }
@@ -21,17 +22,7 @@ namespace RPG_Game.GameObjects.Items
         public override string ToString()
         {
             return string.Format("{0}: Health restore ({1})", this.GetType().Name, this.HealthRestore);
-        }
-
-        public override void Update(GameTime gameTime)
-        {
-        }
-
-        public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
-        {
-            spriteBatch.Draw(Assets.pill, new Vector2(this.Position.XCoord, this.Position.YCoord));
-        }
-        
+        }        
     }
 }
 

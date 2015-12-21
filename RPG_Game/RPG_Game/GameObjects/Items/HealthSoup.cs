@@ -9,9 +9,9 @@ namespace RPG_Game.GameObjects.Items
     public class HealthSoup : Item, IHeal
     {
         private const int DefaultHealthRestore = 100;
-
+        private static readonly Texture2D image = Assets.soup;
         public HealthSoup(Position position)
-            : base(position)
+            : base(position, image)
         {
             this.HealthRestore = DefaultHealthRestore;
         }
@@ -21,15 +21,6 @@ namespace RPG_Game.GameObjects.Items
         public override string ToString()
         {
             return string.Format("{0}: Health restore ({1})", this.GetType().Name, this.HealthRestore);
-        }
-
-        public override void Update(GameTime gameTime)
-        {
-        }
-
-        public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
-        {
-            spriteBatch.Draw(Assets.soup, new Vector2(this.Position.XCoord, this.Position.YCoord));
-        }
+        }        
     }
 }

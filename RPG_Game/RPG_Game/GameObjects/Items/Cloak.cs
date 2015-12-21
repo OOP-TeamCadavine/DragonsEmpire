@@ -9,9 +9,10 @@ namespace RPG_Game.GameObjects.Items
     public class Cloak : Item, IDefenseRestore
     {
         private const int DefaultDefenseRestore = 15;
+        private static readonly Texture2D image = Assets.cloak;
 
         public Cloak(Position position)
-            : base(position)
+            : base(position, image)
         {
             this.DefenseRestore = DefaultDefenseRestore;
         }
@@ -21,15 +22,6 @@ namespace RPG_Game.GameObjects.Items
         public override string ToString()
         {
             return string.Format("{0}: Defense restored ({1})", this.GetType().Name, this.DefenseRestore);
-        }
-
-        public override void Update(GameTime gameTime)
-        {
-        }
-
-        public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
-        {
-            spriteBatch.Draw(Assets.cloak, new Vector2(this.Position.XCoord, this.Position.YCoord));
-        }     
+        }  
     }
 }
