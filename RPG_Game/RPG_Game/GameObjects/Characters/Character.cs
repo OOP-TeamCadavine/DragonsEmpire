@@ -10,6 +10,7 @@ namespace RPG_Game.GameObjects.Characters
             this.AttackPoints = attackPoints;
             this.DefensePoints = defensePoints;
             this.HealthPoints = healthPoints;
+            this.Damage = damage;
         }
 
         public int AttackPoints { get; set; }
