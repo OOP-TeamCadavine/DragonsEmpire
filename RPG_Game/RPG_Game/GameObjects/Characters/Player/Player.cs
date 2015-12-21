@@ -4,10 +4,10 @@ namespace RPG_Game.GameObjects.Characters.Player
 {
     public abstract class Player : Character, IMovable
     {
-        internal bool isMovingLeft;
-        internal bool isMovingRight;
-        internal bool isMovingUp;
-        internal bool isMovingDown;
+        internal bool IsMovingLeft;
+        internal bool IsMovingRight;
+        internal bool IsMovingUp;
+        internal bool IsMovingDown;
         internal int speed;
 
         protected Player(Position position, int attackPoints, int defensePoints, int healthPoints, int damage, int speed)

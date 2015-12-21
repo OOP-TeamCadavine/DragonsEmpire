@@ -47,12 +47,12 @@ namespace RPG_Game.GameObjects.Characters.Player
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            if (isMovingRight || isMovingUp || isMovingDown)
+            if (IsMovingRight || IsMovingUp || IsMovingDown)
             {
                 spriteBatch.Draw(Assets.archangelFly, new Vector2(this.Position.XCoord, this.Position.YCoord), source, Color.White, 0.0f,
       Origin, 1.0f, SpriteEffects.None, 0.0f);
             }
-            else if (isMovingLeft)
+            else if (IsMovingLeft)
             {
                 spriteBatch.Draw(Assets.archangelFlyLeft, new Vector2(this.Position.XCoord, this.Position.YCoord), source, Color.White, 0.0f,
       Origin, 1.0f, SpriteEffects.None, 0.0f);
@@ -65,19 +65,19 @@ namespace RPG_Game.GameObjects.Characters.Player
 
         public override void Move()
         {
-            if (this.isMovingLeft)
+            if (this.IsMovingLeft)
             {
                 this.Position = new Position(this.Position.XCoord - speed, this.Position.YCoord);
             }
-            if (this.isMovingRight)
+            if (this.IsMovingRight)
             {
                 this.Position = new Position(this.Position.XCoord + speed, this.Position.YCoord);
             }
-            if (this.isMovingUp)
+            if (this.IsMovingUp)
             {
                 this.Position = new Position(this.Position.XCoord, this.Position.YCoord - speed);
             }
-            if (this.isMovingDown)
+            if (this.IsMovingDown)
             {
                 this.Position = new Position(this.Position.XCoord, this.Position.YCoord + speed);
             }
@@ -86,7 +86,7 @@ namespace RPG_Game.GameObjects.Characters.Player
         public override void Update(GameTime gameTime)
         {
             this.Move();
-            if (isMovingDown || isMovingRight || isMovingUp)
+            if (IsMovingDown || IsMovingRight || IsMovingUp)
             {
                 time += (float)gameTime.ElapsedGameTime.TotalSeconds;
                 if (time > frameTime)
@@ -99,7 +99,7 @@ namespace RPG_Game.GameObjects.Characters.Player
                     frameIndex = 0;
                 }
             }
-            else if (isMovingLeft)
+            else if (IsMovingLeft)
             {
                 time += (float)gameTime.ElapsedGameTime.TotalSeconds;
                 if (time > frameTime)
