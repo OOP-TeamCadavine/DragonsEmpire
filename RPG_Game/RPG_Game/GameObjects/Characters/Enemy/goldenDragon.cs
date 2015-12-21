@@ -1,18 +1,21 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RPG_Game.Attributes;
 
 namespace RPG_Game.GameObjects.Characters.Enemy
 {
+    [Enemy]
     public class GoldenDragon : Enemy
     {
         private const int DefaultHealth = 600;
         private const int DefaultDamage = 50;
         private const int DefaultAttack = 30;
         private const int DefaultDefense = 25;
+        private const DragonType DragonType = Characters.Enemy.DragonType.Golden;
 
         public GoldenDragon(Position position)
-            : base(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage)
+            : base(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage, DragonType)
         {
         }
 
