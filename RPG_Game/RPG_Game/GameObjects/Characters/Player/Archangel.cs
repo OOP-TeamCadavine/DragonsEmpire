@@ -47,12 +47,12 @@ namespace RPG_Game.GameObjects.Characters.Player
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            if (IsMovingRight || IsMovingUp || IsMovingDown)
+            if (IsMovingRight || IsMovingDown)
             {
                 spriteBatch.Draw(Assets.archangelFly, new Vector2(this.Position.XCoord, this.Position.YCoord), source, Color.White, 0.0f,
       Origin, 1.0f, SpriteEffects.None, 0.0f);
             }
-            else if (IsMovingLeft)
+            else if (IsMovingLeft || IsMovingUp)
             {
                 spriteBatch.Draw(Assets.archangelFlyLeft, new Vector2(this.Position.XCoord, this.Position.YCoord), source, Color.White, 0.0f,
       Origin, 1.0f, SpriteEffects.None, 0.0f);
@@ -86,34 +86,44 @@ namespace RPG_Game.GameObjects.Characters.Player
         public override void Update(GameTime gameTime)
         {
             this.Move();
-            if (IsMovingDown || IsMovingRight || IsMovingUp)
+            if (IsMovingDown || IsMovingRight)
             {
-                time += (float)gameTime.ElapsedGameTime.TotalSeconds;
-                if (time > frameTime)
-                {
-                    frameIndex++;
-                    time = 0f;
-                }
-                if (frameIndex >= totalFrames)
-                {
-                    frameIndex = 0;
-                }
+                AnimateMovingRight(gameTime);
             }
-            else if (IsMovingLeft)
+            else if (IsMovingLeft || IsMovingUp)
             {
-                time += (float)gameTime.ElapsedGameTime.TotalSeconds;
-                if (time > frameTime)
-                {
-                    frameIndex--;
-                    time = 0f;
-                }
-                if (frameIndex < 0)
-                {
-                    frameIndex = totalFrames - 1;
-                }
+                AnimateMovingLeft(gameTime);
             }
             source = new Rectangle(frameIndex * frameWidth, 0, frameWidth, frameHeight);
 
+        }
+
+        private void AnimateMovingLeft(GameTime gameTime)
+        {
+            time += (float) gameTime.ElapsedGameTime.TotalSeconds;
+            if (time > frameTime)
+            {
+                frameIndex--;
+                time = 0f;
+            }
+            if (frameIndex < 0)
+            {
+                frameIndex = totalFrames - 1;
+            }
+        }
+
+        private void AnimateMovingRight(GameTime gameTime)
+        {
+            time += (float) gameTime.ElapsedGameTime.TotalSeconds;
+            if (time > frameTime)
+            {
+                frameIndex++;
+                time = 0f;
+            }
+            if (frameIndex >= totalFrames)
+            {
+                frameIndex = 0;
+            }
         }
     }
 }
