@@ -1,10 +1,11 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using RPG_Game.Events;
-
-namespace RPG_Game.States
+﻿namespace RPG_Game.States
 {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+
+    using Events;
+
     public class MainMenuState : State
     {        
         public event ButtonClickedEventHandler ButtonClicked;

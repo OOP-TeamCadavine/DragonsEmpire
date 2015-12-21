@@ -1,29 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using RPG_Game.GameObjects.Characters.Player;
-using Microsoft.Xna.Framework.Graphics;
-using RPG_Game.Interfaces;
-
+﻿using RPG_Game.Core;
 
 namespace RPG_Game.States
 {
+    using System.Collections.Generic;
+    using Microsoft.Xna.Framework;    
+    using Microsoft.Xna.Framework.Graphics;
+
+    using Interfaces;
+
+    using GameObjects.Characters.Player;
+
     public class GameState : State
     {
         public static Player player;
-        private IList<IGameObject> entities; 
+        private List<IGameObject> entities;
+        private KeyboardHandler keyboardHandler;
+        private CollisionHandler collisionHandler;
 
-        public GameState()
+
+        public GameState(MapInitializer mapInitializer, KeyboardHandler keyboardHandler, CollisionHandler collisionHandler)
         {
             player = new Archangel(new Position(0, 0));
-
-            entities = MapInitializer.PopulateMap();
+            this.keyboardHandler = keyboardHandler;
+            this.collisionHandler = collisionHandler;
+            entities = mapInitializer.PopulateMap();
         }
 
 
         public override void Update(GameTime gameTime)
         {
-            KeyboardHandler.HandleInput();
+            keyboardHandler.HandleInput();
+            collisionHandler.HandleCollisions(player, entities);
+            this.entities.RemoveAll(x => !x.Exists);
             player.Update(gameTime);     
 
         }
@@ -35,7 +43,7 @@ namespace RPG_Game.States
             player.Draw(spriteBatch, gameTime);
 
             foreach (var entity in entities)
-            {
+            {                
                 entity.Draw(spriteBatch, gameTime);
             }
 
