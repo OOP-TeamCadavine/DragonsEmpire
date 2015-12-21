@@ -15,35 +15,35 @@ namespace RPG_Game
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.Left))
                 {
-                    GameState.player.isMovingLeft = true;                    
+                    GameState.player.IsMovingLeft = true;                    
                 }
                 if (Keyboard.GetState().IsKeyDown(Keys.Right))
                 {
-                    GameState.player.isMovingRight = true;                  
+                    GameState.player.IsMovingRight = true;                  
                 }
                 if (Keyboard.GetState().IsKeyDown(Keys.Up))
                 {
-                    GameState.player.isMovingUp = true;
+                    GameState.player.IsMovingUp = true;
                 }
                 if (Keyboard.GetState().IsKeyDown(Keys.Down))
                 {
-                    GameState.player.isMovingDown = true;
+                    GameState.player.IsMovingDown = true;
                 }
                 if (Keyboard.GetState().IsKeyUp(Keys.Left))
                 {
-                    GameState.player.isMovingLeft = false;
+                    GameState.player.IsMovingLeft = false;
                 }
                 if (Keyboard.GetState().IsKeyUp(Keys.Right))
                 {
-                    GameState.player.isMovingRight = false;
+                    GameState.player.IsMovingRight = false;
                 }
                 if (Keyboard.GetState().IsKeyUp(Keys.Up))
                 {
-                    GameState.player.isMovingUp = false;
+                    GameState.player.IsMovingUp = false;
                 }
                 if (Keyboard.GetState().IsKeyUp(Keys.Down))
                 {
-                    GameState.player.isMovingDown = false;
+                    GameState.player.IsMovingDown = false;
                 }
             }
         }
