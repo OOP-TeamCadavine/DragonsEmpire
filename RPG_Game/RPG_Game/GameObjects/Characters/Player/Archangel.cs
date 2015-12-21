@@ -61,27 +61,7 @@ namespace RPG_Game.GameObjects.Characters.Player
             {
                 spriteBatch.Draw(Assets.archangel, new Vector2(this.Position.XCoord, this.Position.YCoord));
             }
-        }
-
-        public override void Move()
-        {
-            if (this.IsMovingLeft)
-            {
-                this.Position = new Position(this.Position.XCoord - speed, this.Position.YCoord);
-            }
-            if (this.IsMovingRight)
-            {
-                this.Position = new Position(this.Position.XCoord + speed, this.Position.YCoord);
-            }
-            if (this.IsMovingUp)
-            {
-                this.Position = new Position(this.Position.XCoord, this.Position.YCoord - speed);
-            }
-            if (this.IsMovingDown)
-            {
-                this.Position = new Position(this.Position.XCoord, this.Position.YCoord + speed);
-            }
-        }
+        }        
 
         public override void Update(GameTime gameTime)
         {
