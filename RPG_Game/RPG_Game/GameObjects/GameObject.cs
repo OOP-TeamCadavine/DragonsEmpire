@@ -14,6 +14,8 @@ namespace RPG_Game.GameObjects
 
         public Position Position { get; set; }
 
+        public Rectangle ColliderBox { get; set; }
+
         public abstract void Draw(SpriteBatch spriteBatch, GameTime gameTime);
 
         public abstract void Update(GameTime gameTime);
