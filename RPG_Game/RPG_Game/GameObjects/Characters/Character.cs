@@ -1,11 +1,18 @@
-﻿using RPG_Game.Interfaces;
+﻿using Microsoft.Xna.Framework.Graphics;
+using RPG_Game.Interfaces;
 
 namespace RPG_Game.GameObjects.Characters
 {
     public abstract class Character : GameObject, ICharacter
     {
-        protected Character(Position position, int attackPoints, int defensePoints, int healthPoints, int damage)
-            : base(position)
+        protected Character(
+            Position position,
+            int attackPoints,
+            int defensePoints,
+            int healthPoints,
+            int damage, 
+            Texture2D image)
+            : base(position, image)
         {
             this.AttackPoints = attackPoints;
             this.DefensePoints = defensePoints;

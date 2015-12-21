@@ -1,20 +1,16 @@
-﻿using RPG_Game.GameObjects.Characters.Player;
-using RPG_Game.GameObjects.Items;
-using RPG_Game.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using RPG_Game.GameObjects.Characters.Enemy;
-using System.Reflection;
-using RPG_Game.Attributes;
-
-namespace RPG_Game
+﻿namespace RPG_Game
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+
+    using Interfaces;
+
+    using Attributes;
+
     public class MapInitializer
     {
-        public static Player player;
-
         public const int MinLength = 100;
         public const int MapWidth = 1100;
         public const int MapHeight = 600;
@@ -24,9 +20,9 @@ namespace RPG_Game
         private static readonly Random Rand = new Random();
 
 
-        public static IList<IGameObject> PopulateMap()
+        public List<IGameObject> PopulateMap()
         {
-            IList<IGameObject> entities = new List<IGameObject>();
+            List<IGameObject> entities = new List<IGameObject>();
 
             GenerateEnemies(entities);
             GenerateItems(entities);

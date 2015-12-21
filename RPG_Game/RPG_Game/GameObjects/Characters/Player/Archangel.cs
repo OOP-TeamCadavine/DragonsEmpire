@@ -12,6 +12,7 @@ namespace RPG_Game.GameObjects.Characters.Player
         private const int DefaultAttack = 30;
         private const int DefaultDefense = 30;
         private const int DefaultSpeed = 5;
+        private static readonly Texture2D image = Assets.archangel; 
 
         // define the size of our animation frame
         private const int frameHeight = 140;
@@ -34,7 +35,7 @@ namespace RPG_Game.GameObjects.Characters.Player
         {
         }
         public Archangel(Position position, int attackPoints, int defensePoints, int healthPoints, int damage, int speed)
-            : base(position, attackPoints, defensePoints, healthPoints, damage, speed)
+            : base(position, attackPoints, defensePoints, healthPoints, damage, speed, image)
         {
         }
 
@@ -68,7 +69,7 @@ namespace RPG_Game.GameObjects.Characters.Player
 
         public override void Update(GameTime gameTime)
         {
-            this.Move();
+            base.Update(gameTime);            
             if (IsMovingDown || IsMovingRight)
             {
                 AnimateMovingRight(gameTime);

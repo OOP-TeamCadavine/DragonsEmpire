@@ -13,9 +13,10 @@ namespace RPG_Game.GameObjects.Characters.Enemy
         private const int DefaultAttack = 20;
         private const int DefaultDefense = 30;
         private const DragonType DragonType = Characters.Enemy.DragonType.Blue;
+        private static readonly Texture2D image = Assets.blueDragon;
 
         public BlueDragon(Position position)
-            : base(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage, DragonType)
+            : base(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage, DragonType, image)
         {
         }
         

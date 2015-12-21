@@ -1,11 +1,13 @@
-﻿using RPG_Game.Interfaces;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using RPG_Game.Interfaces;
 
 namespace RPG_Game.GameObjects.Characters.Player
 {
     public abstract class Player : Character, IMovable
     {               
-        protected Player(Position position, int attackPoints, int defensePoints, int healthPoints, int damage, int speed)
-            : base(position, attackPoints, defensePoints, healthPoints, damage)
+        protected Player(Position position, int attackPoints, int defensePoints, int healthPoints, int damage, int speed, Texture2D image)
+            : base(position, attackPoints, defensePoints, healthPoints, damage, image)
         {
             this.Speed = speed;
         }
@@ -38,6 +40,12 @@ namespace RPG_Game.GameObjects.Characters.Player
             {
                 this.Position = new Position(this.Position.XCoord, this.Position.YCoord + Speed);
             }
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            this.Move();
+            this.ColliderBox = new Rectangle(this.Position.XCoord, this.Position.YCoord, this.Image.Width, this.Image.Height);
         }
     }
 }

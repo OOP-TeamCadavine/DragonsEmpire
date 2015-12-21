@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using RPG_Game.Core;
 using RPG_Game.Events;
 using RPG_Game.States;
 
@@ -9,12 +10,15 @@ namespace RPG_Game
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game
+    public class GameEngine : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        private MapInitializer mapInitializer;
+        private KeyboardHandler keyboardHandler;
+        private CollisionHandler collisionHandler;
 
-        public Game1()
+        public GameEngine()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -35,7 +39,12 @@ namespace RPG_Game
             this.IsMouseVisible = true;
             MainMenuState menu = new MainMenuState();
             menu.ButtonClicked += new ButtonClickedEventHandler(MainMenu_ButtonClicked);
-            StateManager.CurrentState = menu;            
+            StateManager.CurrentState = menu;      
+            mapInitializer = new MapInitializer();
+            keyboardHandler = new KeyboardHandler();
+            collisionHandler = new CollisionHandler();
+
+                  
             base.Initialize();
         }
 
@@ -103,7 +112,7 @@ namespace RPG_Game
             switch (eventArgs.Button)
             {
                 case ButtonNames.Play:
-                    StateManager.CurrentState = new GameState();
+                    StateManager.CurrentState = new GameState(mapInitializer, keyboardHandler, collisionHandler);
                     break;
                     /* ScoreState not implemented yet!
                 case ButtonNames.Score:

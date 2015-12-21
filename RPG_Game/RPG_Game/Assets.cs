@@ -1,11 +1,7 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace RPG_Game
+﻿namespace RPG_Game
 {
+    using Microsoft.Xna.Framework.Graphics;
+
     public static class Assets
     {
         public static Texture2D gameBackground;
@@ -26,7 +22,7 @@ namespace RPG_Game
         public static Texture2D blackDragon;
         public static Texture2D goldenDragon;
 
-        public static void Init(Game1 game)
+        public static void Init(GameEngine game)
         {
             gameBackground = game.Content.Load<Texture2D>("background");
             archangelFly = game.Content.Load<Texture2D>("fly");

@@ -1,15 +1,11 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using RPG_Game.States;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace RPG_Game
 {
-    public static class KeyboardHandler
+    public class KeyboardHandler
     {
-        public static void HandleInput()
+        public void HandleInput()
         {
             if (StateManager.CurrentState is GameState)
             {
