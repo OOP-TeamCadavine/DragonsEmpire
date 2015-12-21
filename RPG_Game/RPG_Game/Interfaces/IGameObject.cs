@@ -1,11 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-
-namespace RPG_Game.Interfaces
+﻿namespace RPG_Game.Interfaces
 {
-    public interface IGameObject : IUpdateable, IDrawable
+    public interface IGameObject : IUpdateable, IDrawable, ICollidable
     {
-        Position Position { get; set; }
-
-        Rectangle ColliderBox { get; set; }
+        Position Position { get; set; }   
+        
+        bool Exists { get; set; } 
     }
 }

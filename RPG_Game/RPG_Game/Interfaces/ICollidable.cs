@@ -2,8 +2,8 @@
 {
     using Microsoft.Xna.Framework;
 
-    public interface IUpdateable
+    public interface ICollidable
     {
-        void Update(GameTime gameTime);
+        Rectangle ColliderBox { get; set; }
     }
 }
