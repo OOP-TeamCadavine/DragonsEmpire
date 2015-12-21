@@ -13,17 +13,20 @@ namespace RPG_Game.GameObjects.Characters.Player
         private const int DefaultDefense = 30;
         private const int DefaultSpeed = 5;
 
-        float time;
-        // duration of time to show each frame
-        float frameTime = 0.1f;
-        // an index of the current frame being shown
-        int frameIndex;
-        // total number of frames in our spritesheet
-        const int totalFrames = 8;
         // define the size of our animation frame
-        const int frameHeight = 140;
-        const int frameWidth = 150;
-        Rectangle source;
+        private const int frameHeight = 140;
+        private const int frameWidth = 150;
+
+        // total number of frames in our spritesheet
+        private const int totalFrames = 8;
+
+        private float time;
+        // duration of time to show each frame
+        private float frameTime = 0.1f;
+        // an index of the current frame being shown
+        private int frameIndex;
+              
+        private Rectangle source;
         private readonly Vector2 Origin = Vector2.Zero;
 
         public Archangel(Position position)
