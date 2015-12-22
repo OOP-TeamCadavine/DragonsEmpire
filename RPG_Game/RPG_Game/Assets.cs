@@ -24,7 +24,8 @@
         public static Texture2D nameStateBackground;
         public static Texture2D enterName;
         public static Texture2D doneButton;
-
+        public static Texture2D gameOverBackground;
+            
         public static void Init(GameEngine game)
         {
             gameBackground = game.Content.Load<Texture2D>("background");
@@ -51,6 +52,9 @@
             nameStateBackground = game.Content.Load<Texture2D>("saveName");
             enterName = game.Content.Load<Texture2D>("emptySpace");
             doneButton = game.Content.Load<Texture2D>("doneButton");
+
+            gameOverBackground = game.Content.Load<Texture2D>("gameover");
+
         }
     }
 }

@@ -8,12 +8,14 @@
     {
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            throw new NotImplementedException();
+            spriteBatch.Begin();
+            spriteBatch.Draw(Assets.gameOverBackground, Vector2.Zero);          
+            spriteBatch.End();
         }
 
         public override void Update(GameTime gameTime)
         {
-            throw new NotImplementedException();
+           
         }
     }
 }
