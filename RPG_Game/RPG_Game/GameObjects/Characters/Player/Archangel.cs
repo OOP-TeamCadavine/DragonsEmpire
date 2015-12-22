@@ -37,17 +37,7 @@ namespace RPG_Game.GameObjects.Characters.Player
         public Archangel(Position position, int attackPoints, int defensePoints, int healthPoints, int damage, int speed)
             : base(position, attackPoints, defensePoints, healthPoints, damage, speed, image)
         {
-        }
-
-        public override void Attack()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Defense()
-        {
-            throw new NotImplementedException();
-        }
+        }               
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {

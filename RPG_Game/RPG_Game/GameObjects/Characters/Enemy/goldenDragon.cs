@@ -20,23 +20,11 @@ namespace RPG_Game.GameObjects.Characters.Enemy
         {
         }
 
-        public override void Attack()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Defense()
-        {
-            throw new NotImplementedException();
-        }
-
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.Draw(Assets.goldenDragon, new Vector2(this.Position.XCoord, this.Position.YCoord));
         }
 
-        public override void Update(GameTime gameTime)
-        {
-        }
+        
     }
 }

@@ -1,10 +1,15 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using RPG_Game.Interfaces;
 
 namespace RPG_Game.GameObjects.Characters
 {
     public abstract class Character : GameObject, ICharacter
     {
+        private readonly int InitialHealth;
+
+        private int healthPoints;
+
         protected Character(
             Position position,
             int attackPoints,
@@ -16,6 +21,7 @@ namespace RPG_Game.GameObjects.Characters
         {
             this.AttackPoints = attackPoints;
             this.DefensePoints = defensePoints;
+            this.InitialHealth = healthPoints;
             this.HealthPoints = healthPoints;
             this.Damage = damage;
         }
@@ -24,12 +30,29 @@ namespace RPG_Game.GameObjects.Characters
 
         public int DefensePoints { get; set; }
 
-        public int HealthPoints { get; set; }
+        public int HealthPoints
+        {
+            get { return this.healthPoints; }
+            set
+            {
+                this.healthPoints = value > this.InitialHealth ? this.InitialHealth : value;
+            }
+        }
 
         public int Damage { get; set; }
 
-        public abstract void Attack();
+        public void Attack(ICharacter target)
+        {
+            target.HealthPoints -= this.Damage + this.AttackPoints - target.DefensePoints;
+        }
 
-        public abstract void Defense();
+        public override void Update(GameTime gameTime)
+        {
+            if (this.HealthPoints <= 0)
+            {
+                this.HealthPoints = 0;
+                this.Exists = false;
+            }
+        }
     }
 }

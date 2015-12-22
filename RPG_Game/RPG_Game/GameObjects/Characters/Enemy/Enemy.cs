@@ -1,8 +1,7 @@
-﻿using System.Runtime.CompilerServices;
-using Microsoft.Xna.Framework.Graphics;
-
-namespace RPG_Game.GameObjects.Characters.Enemy
+﻿namespace RPG_Game.GameObjects.Characters.Enemy
 {
+    using Microsoft.Xna.Framework.Graphics;
+
     public abstract class Enemy : Character
     {
         protected Enemy(Position position, int attackPoints, int defensePoints, int healthPoints, int damage, DragonType type, Texture2D image)
