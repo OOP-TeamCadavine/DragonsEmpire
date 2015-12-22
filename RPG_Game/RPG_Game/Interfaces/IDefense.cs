@@ -2,6 +2,6 @@
 {
     public interface IDefense
     {
-        void Defense();
+        int DefensePoints { get; set; }
     }
 }

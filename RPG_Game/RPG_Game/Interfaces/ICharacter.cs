@@ -4,9 +4,6 @@
     {
         int HealthPoints { get; set; }
 
-        int DefensePoints { get; set;}
-
         int AttackPoints { get; set;}
-
     }
 }

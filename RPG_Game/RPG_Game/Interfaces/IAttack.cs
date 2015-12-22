@@ -4,6 +4,6 @@
     {
         int Damage { get; set; }
 
-        void Attack();
+        void Attack(ICharacter target);
     }
 }
