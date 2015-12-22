@@ -48,6 +48,8 @@ namespace RPG_Game
             keyboardHandler = new KeyboardHandler();
             collisionHandler = new CollisionHandler();
 
+            //TODO: Initialize GameOverState
+
             base.Initialize();
         }
 
