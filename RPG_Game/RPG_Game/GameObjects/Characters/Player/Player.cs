@@ -9,7 +9,7 @@
     
     using Interfaces;
 
-    public abstract class Player : Character, IMovable, IExperience
+    public abstract class Player : Character, IMovable,IExperience
     {
         private const int WindowWidth = 1200;
         private const int WindowHeight = 700;

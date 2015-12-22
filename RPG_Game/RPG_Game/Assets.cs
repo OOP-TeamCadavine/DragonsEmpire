@@ -24,6 +24,9 @@
         public static Texture2D nameStateBackground;
         public static Texture2D enterName;
         public static Texture2D doneButton;
+        public static Texture2D toolbar;
+        public static Texture2D okButton;
+        public static Texture2D errorBackground;
 
         public static SpriteFont name;
 
@@ -36,7 +39,8 @@
             archangelFly = game.Content.Load<Texture2D>("fly");
             archangelFlyLeft = game.Content.Load<Texture2D>("flyleft");
             archangel = game.Content.Load<Texture2D>("arhangel");
-
+            toolbar = game.Content.Load<Texture2D>("toolbar");
+            
             blueDragon = game.Content.Load<Texture2D>("blueDragon");
             blackDragon = game.Content.Load<Texture2D>("blackDragon");
             goldenDragon = game.Content.Load<Texture2D>("goldenDragon");
@@ -57,6 +61,8 @@
             enterName = game.Content.Load<Texture2D>("emptySpace");
             doneButton = game.Content.Load<Texture2D>("doneButton");
 
+            errorBackground = game.Content.Load<Texture2D>("error");
+            okButton = game.Content.Load<Texture2D>("okbutton");
 
             name = game.Content.Load<SpriteFont>("name");
 

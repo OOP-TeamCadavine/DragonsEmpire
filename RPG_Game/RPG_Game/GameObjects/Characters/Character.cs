@@ -48,10 +48,10 @@ namespace RPG_Game.GameObjects.Characters
             var targetHealthLost = initialTargetHealth - target.HealthPoints;
             if (this is IExperience)
             {
-                ((IExperience) this).Experience += targetHealthLost;
-                if (target.HealthPoints <=0 )
+                ((IExperience)this).Experience += targetHealthLost;
+                if (target.HealthPoints <= 0)
                 {
-                    ((IExperience) this).DragonsKilled += 1;
+                    ((IExperience)this).DragonsKilled += 1;
                 }
             }
         }

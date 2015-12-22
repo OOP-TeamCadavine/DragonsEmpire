@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Net;
 using RPG_Game.Core;
 using RPG_Game.GameObjects.Characters.Enemy;
 using RPG_Game.GameObjects.Items;
@@ -20,7 +21,8 @@ namespace RPG_Game.States
         private List<IGameObject> entities;
         private PlayerController playerController;
         private CollisionHandler collisionHandler;
-
+        
+        Rectangle toolbarArea = new Rectangle(400,-120,750,350);
 
         public GameState(string playerName, MapInitializer mapInitializer, PlayerController playerController, CollisionHandler collisionHandler)
         {
@@ -64,7 +66,8 @@ namespace RPG_Game.States
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(Assets.gameBackground, Vector2.Zero);                   
+            spriteBatch.Draw(Assets.gameBackground, Vector2.Zero);     
+            spriteBatch.Draw(Assets.toolbar,toolbarArea,Color.White);              
             foreach (var entity in entities)
             {                
                 entity.Draw(spriteBatch, gameTime);
