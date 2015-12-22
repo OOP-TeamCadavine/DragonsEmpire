@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/RPG_Game/RPG_Game/RPG_Game/Content/background.jpg</SourceFile>
-  <SourceTime>2015-12-11T15:59:51.0567589+02:00</SourceTime>
-  <DestFile>D:/RPG_Game/RPG_Game/RPG_Game/Content/bin/Windows/background.xnb</DestFile>
-  <DestTime>2015-12-22T02:53:53.3280463+02:00</DestTime>
+  <SourceFile>D:/SoftUni/Fundamentals Level/OOP/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/background.jpg</SourceFile>
+  <SourceTime>2015-12-22T03:36:19.4657349+02:00</SourceTime>
+  <DestFile>D:/SoftUni/Fundamentals Level/OOP/RPG_Game.git/trunk/RPG_Game/RPG_Game/Content/bin/Windows/background.xnb</DestFile>
+  <DestTime>2015-12-22T03:39:34.0041374+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-29T20:14:44+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
