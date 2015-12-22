@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Specialized;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using RPG_Game.Exceptions;
-using RPG_Game.Interfaces;
-
-namespace RPG_Game.GameObjects.Characters.Player
+﻿namespace RPG_Game.GameObjects.Characters.Player
 {
-    public abstract class Player : Character, IMovable
+    using System;
+    using System.Collections.Specialized;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    
+    using Exceptions;
+    
+    using Interfaces;
+
+    public abstract class Player : Character, IMovable, IExperience
     {
         private const int WindowWidth = 1200;
         private const int WindowHeight = 700;
@@ -19,6 +21,8 @@ namespace RPG_Game.GameObjects.Characters.Player
         {
             this.Speed = speed;
             this.Name = name;
+            this.Experience = 0;
+            this.DragonsKilled = 0;
         }
 
         public string Name
@@ -37,6 +41,21 @@ namespace RPG_Game.GameObjects.Characters.Player
                 this.name = value;
             }
         }
+
+        public int Experience
+        {
+            get { return this.experience; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+                this.experience = value;
+            }
+        }
+
+        public int DragonsKilled { get; set; }
 
         public bool IsMovingLeft { get; set; }
 
