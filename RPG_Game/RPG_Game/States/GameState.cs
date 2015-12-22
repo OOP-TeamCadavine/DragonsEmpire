@@ -22,7 +22,7 @@ namespace RPG_Game.States
         public GameState(string playerName, MapInitializer mapInitializer, PlayerController playerController, CollisionHandler collisionHandler)
         {
             this.playerName = playerName;
-            player = new Archangel(new Position(0, 0));
+            player = new Archangel(new Position(0, 0), playerName);
             this.playerController = playerController;
             this.collisionHandler = collisionHandler;
             entities = mapInitializer.PopulateMap();

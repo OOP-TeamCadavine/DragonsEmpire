@@ -30,12 +30,12 @@ namespace RPG_Game.GameObjects.Characters.Player
         private Rectangle source;
         private readonly Vector2 Origin = Vector2.Zero;
 
-        public Archangel(Position position)
-            : this(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage, DefaultSpeed)
+        public Archangel(Position position, string name)
+            : this(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage, DefaultSpeed, name)
         {
         }
-        public Archangel(Position position, int attackPoints, int defensePoints, int healthPoints, int damage, int speed)
-            : base(position, attackPoints, defensePoints, healthPoints, damage, speed, image)
+        public Archangel(Position position, int attackPoints, int defensePoints, int healthPoints, int damage, int speed, string name)
+            : base(position, attackPoints, defensePoints, healthPoints, damage, speed, image, name)
         {
         }               
 

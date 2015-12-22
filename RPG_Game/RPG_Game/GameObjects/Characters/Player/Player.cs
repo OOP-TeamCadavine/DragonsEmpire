@@ -1,5 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Specialized;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RPG_Game.Exceptions;
 using RPG_Game.Interfaces;
 
 namespace RPG_Game.GameObjects.Characters.Player
@@ -8,10 +10,25 @@ namespace RPG_Game.GameObjects.Characters.Player
     {
         private const int WindowWidth = 1200;
         private const int WindowHeight = 700;
-        protected Player(Position position, int attackPoints, int defensePoints, int healthPoints, int damage, int speed, Texture2D image)
+        private string name;
+
+        protected Player(Position position, int attackPoints, int defensePoints, 
+            int healthPoints, int damage, int speed, Texture2D image, string name)
             : base(position, attackPoints, defensePoints, healthPoints, damage, image)
         {
             this.Speed = speed;
+            this.Name = name;
+        }
+
+        public string Name
+        {
+            get { return this.name; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new PlayerNameNullPointerException("Player name cannot be null or empty!");                }
+            }
         }
 
         public bool IsMovingLeft { get; set; }

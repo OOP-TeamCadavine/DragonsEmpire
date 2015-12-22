@@ -46,6 +46,7 @@
     <Compile Include="Events\ButtonClickedEventHandler.cs" />
     <Compile Include="Events\ButtonNames.cs" />
     <Compile Include="Core\GameEngine.cs" />
+    <Compile Include="Exceptions\PlayerNameNullPointerException.cs" />
     <Compile Include="GameObjects\Characters\Character.cs" />
     <Compile Include="GameObjects\Characters\Enemy\BlackDragon.cs" />
     <Compile Include="GameObjects\Characters\Enemy\BlueDragon.cs" />
