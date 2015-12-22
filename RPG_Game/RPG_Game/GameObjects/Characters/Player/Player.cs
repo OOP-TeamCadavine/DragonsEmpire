@@ -14,6 +14,7 @@
         private const int WindowWidth = 1200;
         private const int WindowHeight = 700;
         private string name;
+        private int experience;
 
         protected Player(Position position, int attackPoints, int defensePoints,
             int healthPoints, int damage, int speed, Texture2D image, string name)

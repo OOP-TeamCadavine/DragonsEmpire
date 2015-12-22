@@ -35,11 +35,11 @@
                             player.AttackPoints += ((IAttackBoost)entity).AttackBoost;
                         }
                     }
-                    //else if (entity is ICharacter)
-                    //{
-                    //    //player.Attack((ICharacter)entity);
-                    //    ((ICharacter)entity).Attack(player);
-                    //}
+                    else if (entity is ICharacter)
+                    {
+                        player.Attack((ICharacter)entity);
+                        ((ICharacter)entity).Attack(player);
+                    }
                 }
             }
         }

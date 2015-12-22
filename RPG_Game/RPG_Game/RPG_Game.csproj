@@ -70,6 +70,7 @@
     <Compile Include="Interfaces\IDefense.cs" />
     <Compile Include="Interfaces\IDefenseRestore.cs" />
     <Compile Include="Interfaces\IDrawable.cs" />
+    <Compile Include="Interfaces\IExperience.cs" />
     <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IHeal.cs" />
     <Compile Include="Interfaces\IMovable.cs" />
