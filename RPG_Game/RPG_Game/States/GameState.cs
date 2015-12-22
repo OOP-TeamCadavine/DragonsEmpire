@@ -1,4 +1,7 @@
-﻿using RPG_Game.Core;
+﻿using System.Linq;
+using RPG_Game.Core;
+using RPG_Game.GameObjects.Characters.Enemy;
+using RPG_Game.GameObjects.Items;
 
 namespace RPG_Game.States
 {
@@ -42,7 +45,20 @@ namespace RPG_Game.States
             if (!player.Exists)
             {
                 StateManager.CurrentState = new GameOverState();
-            }   
+            }
+
+            IList<IGameObject> items = entities.Where(i => i is Item).ToList();
+            IList<IGameObject> enemies = entities.Where(i => i is Enemy).ToList();
+
+            if (items.Count == 0)
+            {
+                MapInitializer.GenerateItems(entities);
+            }
+            if (enemies.Count == 0)
+            {
+                MapInitializer.GenerateEnemies(entities);
+            }
+
 
         }
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)

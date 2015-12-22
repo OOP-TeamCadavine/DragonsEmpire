@@ -50,8 +50,6 @@ namespace RPG_Game
             playerController = new PlayerController();
             collisionHandler = new CollisionHandler();
 
-            //TODO: Initialize GameOverState
-
             base.Initialize();
         }
 
@@ -67,7 +65,6 @@ namespace RPG_Game
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Assets.Init(this);
 
-            // TODO: use this.Content to load your game content here
         }
 
         /// <summary>
@@ -76,7 +73,6 @@ namespace RPG_Game
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
         }
 
         /// <summary>
@@ -87,10 +83,7 @@ namespace RPG_Game
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-            // TODO: Add your update logic here
-            
+                Exit();   
             
             if (StateManager.CurrentState != null)
             {
@@ -115,7 +108,6 @@ namespace RPG_Game
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
             if (StateManager.CurrentState != null)
             {
                 StateManager.CurrentState.Draw(spriteBatch, gameTime);

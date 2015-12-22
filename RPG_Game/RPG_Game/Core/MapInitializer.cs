@@ -30,7 +30,7 @@
             return entities;
         }
 
-        private static void GenerateEnemies(IList<IGameObject> entities)
+        public static void GenerateEnemies(IList<IGameObject> entities)
         {
             var allEnemies = Assembly.GetExecutingAssembly().GetTypes()
                 .Where(t => t.IsClass)
@@ -58,7 +58,7 @@
             }
         }
 
-        private static void GenerateItems(IList<IGameObject> entities)
+        public static void GenerateItems(IList<IGameObject> entities)
         {
             var allItems = Assembly.GetExecutingAssembly().GetTypes()
                 .Where(t => t.IsClass)
