@@ -18,7 +18,7 @@ namespace RPG_Game
         private MapInitializer mapInitializer;
         private KeyboardHandler keyboardHandler;
         private CollisionHandler collisionHandler;
-        private GetNameState getNameState;
+        private EnterNameState getNameState;
 
         public GameEngine()
         {
@@ -42,7 +42,7 @@ namespace RPG_Game
             MainMenuState menu = new MainMenuState();
             menu.ButtonClicked += new ButtonClickedEventHandler(MainMenu_ButtonClicked);
             StateManager.CurrentState = menu;
-            getNameState = new GetNameState();
+            getNameState = new EnterNameState();
             getNameState.ButtonClicked += new ButtonClickedEventHandler(GetNameState_ButtonClicked);
             mapInitializer = new MapInitializer();
             keyboardHandler = new KeyboardHandler();

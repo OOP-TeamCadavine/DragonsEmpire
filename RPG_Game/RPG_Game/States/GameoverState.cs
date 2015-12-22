@@ -4,7 +4,7 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
 
-    public class GameoverState : State
+    public class GameOverState : State
     {
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {

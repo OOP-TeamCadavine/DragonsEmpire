@@ -24,6 +24,7 @@
         public static Texture2D nameStateBackground;
         public static Texture2D enterName;
         public static Texture2D doneButton;
+        public static SpriteFont name;
 
         public static void Init(GameEngine game)
         {
@@ -51,6 +52,8 @@
             nameStateBackground = game.Content.Load<Texture2D>("saveName");
             enterName = game.Content.Load<Texture2D>("emptySpace");
             doneButton = game.Content.Load<Texture2D>("doneButton");
+
+            name = game.Content.Load<SpriteFont>("name");
         }
     }
 }

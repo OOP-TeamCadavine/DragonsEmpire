@@ -78,9 +78,9 @@
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="States\GameoverState.cs" />
+    <Compile Include="States\GameOverState.cs" />
     <Compile Include="States\GameState.cs" />
-    <Compile Include="States\GetNameState.cs" />
+    <Compile Include="States\EnterNameState.cs" />
     <Compile Include="States\MainMenuState.cs" />
     <Compile Include="States\State.cs" />
     <Compile Include="States\StateManager.cs" />
