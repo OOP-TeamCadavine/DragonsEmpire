@@ -12,8 +12,8 @@
         public static Texture2D soup;
         public static Texture2D cloak;
         public static Texture2D shield;
-        public static Texture2D sword; 
-        public static Texture2D konay; 
+        public static Texture2D sword;
+        public static Texture2D konay;
         public static Texture2D mainMenuImage;
         public static Texture2D buttonPlay;
         public static Texture2D buttonScore;
@@ -24,13 +24,12 @@
         public static Texture2D nameStateBackground;
         public static Texture2D enterName;
         public static Texture2D doneButton;
-<<<<<<< HEAD
+
         public static SpriteFont name;
 
-=======
         public static Texture2D gameOverBackground;
-            
->>>>>>> 28211ba27a4b31c28c484f74cea50c04a854a80b
+
+
         public static void Init(GameEngine game)
         {
             gameBackground = game.Content.Load<Texture2D>("background");
@@ -46,8 +45,8 @@
             soup = game.Content.Load<Texture2D>("soup");
             cloak = game.Content.Load<Texture2D>("cloak");
             shield = game.Content.Load<Texture2D>("shield");
-            sword = game.Content.Load<Texture2D>("sword"); 
-            konay = game.Content.Load<Texture2D>("konay"); 
+            sword = game.Content.Load<Texture2D>("sword");
+            konay = game.Content.Load<Texture2D>("konay");
 
             mainMenuImage = game.Content.Load<Texture2D>("DragonsEmpire");
             buttonPlay = game.Content.Load<Texture2D>("buttonPlay");
@@ -58,12 +57,10 @@
             enterName = game.Content.Load<Texture2D>("emptySpace");
             doneButton = game.Content.Load<Texture2D>("doneButton");
 
-<<<<<<< HEAD
-            name = game.Content.Load<SpriteFont>("name");
-=======
-            gameOverBackground = game.Content.Load<Texture2D>("gameover");
 
->>>>>>> 28211ba27a4b31c28c484f74cea50c04a854a80b
+            name = game.Content.Load<SpriteFont>("name");
+
+            gameOverBackground = game.Content.Load<Texture2D>("gameover");
         }
     }
 }
