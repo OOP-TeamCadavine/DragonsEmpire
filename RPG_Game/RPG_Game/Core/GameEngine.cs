@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using RPG_Game.Core;
@@ -17,6 +18,7 @@ namespace RPG_Game
         private MapInitializer mapInitializer;
         private KeyboardHandler keyboardHandler;
         private CollisionHandler collisionHandler;
+        private GetNameState getNameState;
 
         public GameEngine()
         {
@@ -34,19 +36,22 @@ namespace RPG_Game
         /// and initialize them as well.
         /// </summary>
         protected override void Initialize()
-        {     
+        {
             // TODO: Add your initialization logic here
             this.IsMouseVisible = true;
             MainMenuState menu = new MainMenuState();
             menu.ButtonClicked += new ButtonClickedEventHandler(MainMenu_ButtonClicked);
-            StateManager.CurrentState = menu;      
+            StateManager.CurrentState = menu;
+            getNameState = new GetNameState();
+            getNameState.ButtonClicked += new ButtonClickedEventHandler(GetNameState_ButtonClicked);
             mapInitializer = new MapInitializer();
             keyboardHandler = new KeyboardHandler();
             collisionHandler = new CollisionHandler();
 
-                  
             base.Initialize();
         }
+
+       
 
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
@@ -112,8 +117,8 @@ namespace RPG_Game
             switch (eventArgs.Button)
             {
                 case ButtonNames.Play:
-                    StateManager.CurrentState = new GameState(mapInitializer, keyboardHandler, collisionHandler);
-                    break;
+                    StateManager.CurrentState = getNameState;
+                    break;                   
                     /* ScoreState not implemented yet!
                 case ButtonNames.Score:
                     StateManager.CurrentState = new ScoreState();
@@ -123,6 +128,16 @@ namespace RPG_Game
                     this.Exit();
                     break;
 
+            }
+        }
+
+        private void GetNameState_ButtonClicked(object sender, ButtonClickedEventArgs eventArgs)
+        {
+            switch (eventArgs.Button)
+            {
+                    case ButtonNames.Done:
+                    StateManager.CurrentState = new GameState(mapInitializer, keyboardHandler, collisionHandler);
+                    break;
             }
         }
     }

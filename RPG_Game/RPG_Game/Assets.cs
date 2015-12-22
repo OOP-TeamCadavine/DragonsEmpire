@@ -21,6 +21,9 @@
         public static Texture2D blueDragon;
         public static Texture2D blackDragon;
         public static Texture2D goldenDragon;
+        public static Texture2D nameStateBackground;
+        public static Texture2D enterName;
+        public static Texture2D doneButton;
 
         public static void Init(GameEngine game)
         {
@@ -44,6 +47,10 @@
             buttonPlay = game.Content.Load<Texture2D>("buttonPlay");
             buttonScore = game.Content.Load<Texture2D>("buttonScore");
             buttonExit = game.Content.Load<Texture2D>("buttonExit");
+
+            nameStateBackground = game.Content.Load<Texture2D>("saveName");
+            enterName = game.Content.Load<Texture2D>("emptySpace");
+            doneButton = game.Content.Load<Texture2D>("doneButton");
         }
     }
 }

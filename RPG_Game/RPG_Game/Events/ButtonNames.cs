@@ -4,6 +4,8 @@ namespace RPG_Game.Events
     {
         Play,
         Score,
-        Exit
+        Exit,
+        Done,
+        EnterName
     }
 }
