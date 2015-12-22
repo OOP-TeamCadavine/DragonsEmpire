@@ -1,4 +1,5 @@
-﻿using System.Collections.Specialized;
+﻿using System;
+using System.Collections.Specialized;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RPG_Game.Exceptions;
@@ -12,7 +13,7 @@ namespace RPG_Game.GameObjects.Characters.Player
         private const int WindowHeight = 700;
         private string name;
 
-        protected Player(Position position, int attackPoints, int defensePoints, 
+        protected Player(Position position, int attackPoints, int defensePoints,
             int healthPoints, int damage, int speed, Texture2D image, string name)
             : base(position, attackPoints, defensePoints, healthPoints, damage, image)
         {
@@ -27,16 +28,22 @@ namespace RPG_Game.GameObjects.Characters.Player
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new PlayerNameNullPointerException("Player name cannot be null or empty!");                }
+                    throw new PlayerNameNullPointerException("Player name cannot be null or empty!");
+                }
+                else if (value.Length > 10)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value),"Player name must be less than or equal to 10 letters.");
+                }
+                this.name = value;
             }
         }
 
         public bool IsMovingLeft { get; set; }
 
         public bool IsMovingRight { get; set; }
-        
+
         public bool IsMovingUp { get; set; }
-        
+
         public bool IsMovingDown { get; set; }
 
         public int Speed { get; set; }
@@ -59,13 +66,13 @@ namespace RPG_Game.GameObjects.Characters.Player
             {
                 this.Position = new Position(this.Position.XCoord, this.Position.YCoord + Speed);
             }
-        }      
+        }
 
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
             this.Move();
-            this.ColliderBox = new Rectangle(this.Position.XCoord + this.Image.Width/4, this.Position.YCoord, this.Image.Width/2, this.Image.Height);
+            this.ColliderBox = new Rectangle(this.Position.XCoord + this.Image.Width / 4, this.Position.YCoord, this.Image.Width / 2, this.Image.Height);
         }
     }
 }

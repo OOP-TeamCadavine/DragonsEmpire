@@ -26,6 +26,7 @@ namespace RPG_Game.States
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.Begin();
+
             spriteBatch.Draw(Assets.nameStateBackground, Vector2.Zero);
             spriteBatch.Draw(Assets.doneButton, doneButton, Color.White);
             spriteBatch.Draw(Assets.enterName, enterNameButton, Color.White);

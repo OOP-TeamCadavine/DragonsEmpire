@@ -39,7 +39,7 @@ namespace RPG_Game
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+
             this.IsMouseVisible = true;
             MainMenuState menu = new MainMenuState();
             menu.ButtonClicked += new ButtonClickedEventHandler(MainMenu_ButtonClicked);
@@ -52,8 +52,7 @@ namespace RPG_Game
 
             base.Initialize();
         }
-
-       
+      
 
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
@@ -64,7 +63,6 @@ namespace RPG_Game
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Assets.Init(this);
-
         }
 
         /// <summary>
@@ -131,7 +129,6 @@ namespace RPG_Game
                 case ButtonNames.Exit:
                     this.Exit();
                     break;
-
             }
         }
 
