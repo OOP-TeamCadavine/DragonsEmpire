@@ -27,11 +27,12 @@
         public static Texture2D toolbar;
         public static Texture2D okButton;
         public static Texture2D errorBackground;
-
-        public static SpriteFont name;
-
         public static Texture2D gameOverBackground;
 
+        public static SpriteFont name;
+        public static SpriteFont dragonsKilled;
+        public static SpriteFont health;
+        public static SpriteFont experience;
 
         public static void Init(GameEngine game)
         {
@@ -65,6 +66,9 @@
             okButton = game.Content.Load<Texture2D>("okbutton");
 
             name = game.Content.Load<SpriteFont>("name");
+            health = game.Content.Load<SpriteFont>("health");
+            experience = game.Content.Load<SpriteFont>("experience");
+            dragonsKilled = game.Content.Load<SpriteFont>("dragons");
 
             gameOverBackground = game.Content.Load<Texture2D>("gameover");
         }

@@ -294,3 +294,21 @@
 /processorParam:TextureFormat=Color
 /build:toolbar.png
 
+#begin health.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:health.spritefont
+
+#begin experience.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:experience.spritefont
+
+#begin dragons.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:dragons.spritefont
+
