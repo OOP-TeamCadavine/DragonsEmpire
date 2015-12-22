@@ -19,11 +19,10 @@ namespace RPG_Game.States
         private Keys[] lastPressedKeys = new Keys[10];
         private string playerName = string.Empty;
 
-        public EnterNameState()
+        public string PlayerName
         {
-            
+            get { return this.playerName; }
         }
-
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.Begin();
@@ -95,7 +94,7 @@ namespace RPG_Game.States
             {
                 playerName += ' ';
             }
-            else
+            else if(key >= Keys.A && key <= Keys.Z)
             {
                 playerName += key.ToString();
             }

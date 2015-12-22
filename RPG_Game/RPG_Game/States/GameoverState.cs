@@ -1,4 +1,6 @@
-﻿namespace RPG_Game.States
+﻿using Microsoft.Xna.Framework.Input;
+
+namespace RPG_Game.States
 {
     using System;
     using Microsoft.Xna.Framework;
@@ -15,7 +17,7 @@
 
         public override void Update(GameTime gameTime)
         {
-           
+            
         }
     }
 }
