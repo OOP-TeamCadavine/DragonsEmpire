@@ -12,7 +12,7 @@
     public class MapInitializer
     {
         public const int MinLength = 100;
-        public const int MapWidth = 1100;
+        public const int MapWidth = 1000;
         public const int MapHeight = 600;
         private const int NumberOfEnemies = 3;
         private const int NumberOfItems = 2;

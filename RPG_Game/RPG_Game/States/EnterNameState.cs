@@ -30,7 +30,7 @@ namespace RPG_Game.States
             spriteBatch.Draw(Assets.nameStateBackground, Vector2.Zero);
             spriteBatch.Draw(Assets.doneButton, doneButton, Color.White);
             spriteBatch.Draw(Assets.enterName, enterNameButton, Color.White);
-            spriteBatch.DrawString(Assets.name, playerName, new Vector2(200, 450), Color.Black);
+            spriteBatch.DrawString(Assets.name, playerName, new Vector2(200, 430), Color.Black);
 
             spriteBatch.End();
         }
