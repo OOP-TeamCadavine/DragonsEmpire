@@ -7,7 +7,7 @@ namespace RPG_Game.GameObjects.Characters.Player
 {
     public class Archangel : Player
     {
-        private const int DefaultHealth = 500;
+        private const int DefaultHealth = 1000;
         private const int DefaultDamage = 50;
         private const int DefaultAttack = 30;
         private const int DefaultDefense = 30;

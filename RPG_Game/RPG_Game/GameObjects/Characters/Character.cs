@@ -43,7 +43,17 @@ namespace RPG_Game.GameObjects.Characters
 
         public void Attack(ICharacter target)
         {
+            var initialTargetHealth = target.HealthPoints;
             target.HealthPoints -= this.Damage + this.AttackPoints - target.DefensePoints;
+            var targetHealthLost = initialTargetHealth - target.HealthPoints;
+            if (this is IExperience)
+            {
+                ((IExperience) this).Experience += targetHealthLost;
+                if (target.HealthPoints <=0 )
+                {
+                    ((IExperience) this).DragonsKilled += 1;
+                }
+            }
         }
 
         public override void Update(GameTime gameTime)
