@@ -3,7 +3,7 @@ using RPG_Game.States;
 using System;
 namespace RPG_Game
 {
-    public class KeyboardHandler
+    public class PlayerController
     {
         public void HandleInput()
         {

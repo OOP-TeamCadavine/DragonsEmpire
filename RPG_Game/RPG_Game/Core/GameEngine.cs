@@ -16,9 +16,11 @@ namespace RPG_Game
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private MapInitializer mapInitializer;
-        private KeyboardHandler keyboardHandler;
+        private PlayerController playerController;
         private CollisionHandler collisionHandler;
-        private EnterNameState getNameState;
+        private EnterNameState enterNameState;
+        private MainMenuState menu;
+        private string playerName;
 
         public GameEngine()
         {
@@ -42,10 +44,10 @@ namespace RPG_Game
             MainMenuState menu = new MainMenuState();
             menu.ButtonClicked += new ButtonClickedEventHandler(MainMenu_ButtonClicked);
             StateManager.CurrentState = menu;
-            getNameState = new EnterNameState();
-            getNameState.ButtonClicked += new ButtonClickedEventHandler(GetNameState_ButtonClicked);
+            enterNameState = new EnterNameState();
+            enterNameState.ButtonClicked += new ButtonClickedEventHandler(GetNameState_ButtonClicked);
             mapInitializer = new MapInitializer();
-            keyboardHandler = new KeyboardHandler();
+            playerController = new PlayerController();
             collisionHandler = new CollisionHandler();
 
             //TODO: Initialize GameOverState
@@ -94,6 +96,14 @@ namespace RPG_Game
             {
                 StateManager.CurrentState.Update(gameTime);
             }
+            if (StateManager.CurrentState is GameOverState && Keyboard.GetState().IsKeyDown(Keys.Enter))
+            {
+                menu = new MainMenuState();
+                menu.ButtonClicked += new ButtonClickedEventHandler(MainMenu_ButtonClicked);
+                StateManager.CurrentState = menu;
+                enterNameState = new EnterNameState();
+                enterNameState.ButtonClicked += new ButtonClickedEventHandler(GetNameState_ButtonClicked);
+            }
             base.Update(gameTime);
         }
 
@@ -119,7 +129,7 @@ namespace RPG_Game
             switch (eventArgs.Button)
             {
                 case ButtonNames.Play:
-                    StateManager.CurrentState = getNameState;
+                    StateManager.CurrentState = enterNameState;
                     break;                   
                     /* ScoreState not implemented yet!
                 case ButtonNames.Score:
@@ -138,7 +148,8 @@ namespace RPG_Game
             switch (eventArgs.Button)
             {
                     case ButtonNames.Done:
-                    StateManager.CurrentState = new GameState(mapInitializer, keyboardHandler, collisionHandler);
+                    playerName = enterNameState.PlayerName;
+                    StateManager.CurrentState = new GameState(playerName, mapInitializer, playerController, collisionHandler);
                     break;
             }
         }

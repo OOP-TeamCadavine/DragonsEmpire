@@ -1,12 +1,14 @@
-﻿using RPG_Game.GameObjects.Items;
-
-namespace RPG_Game.Core
+﻿namespace RPG_Game.Core
 {
     using System.Collections.Generic;
 
     using Interfaces;
 
     using GameObjects.Characters.Player;
+
+    using GameObjects.Characters.Enemy;
+
+    using GameObjects.Items;
 
     public class CollisionHandler
     {
@@ -18,7 +20,25 @@ namespace RPG_Game.Core
                 {
                     if (entity is Item)
                     {
-                        ((Item) entity).Exists = false;
+                        ((Item)entity).Exists = false;
+                        if (entity is IHeal)
+                        {
+                            player.HealthPoints += ((IHeal)entity).HealthRestore;
+
+                        }
+                        else if (entity is IDefenseRestore)
+                        {
+                            player.DefensePoints += ((IDefenseRestore)entity).DefenseRestore;
+                        }
+                        else if (entity is IAttackBoost)
+                        {
+                            player.AttackPoints += ((IAttackBoost)entity).AttackBoost;
+                        }
+                    }
+                    else if (entity is ICharacter)
+                    {
+                        player.Attack((ICharacter)entity);
+                        ((ICharacter)entity).Attack(player);
                     }
                 }
             }
