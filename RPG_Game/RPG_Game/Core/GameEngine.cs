@@ -39,7 +39,6 @@ namespace RPG_Game
         /// </summary>
         protected override void Initialize()
         {
-
             this.IsMouseVisible = true;
             MainMenuState menu = new MainMenuState();
             menu.ButtonClicked += new ButtonClickedEventHandler(MainMenu_ButtonClicked);
@@ -121,11 +120,9 @@ namespace RPG_Game
                 case ButtonNames.Play:
                     StateManager.CurrentState = enterNameState;
                     break;                   
-                    /* ScoreState not implemented yet!
-                case ButtonNames.Score:
-                    StateManager.CurrentState = new ScoreState();
+                case ButtonNames.Scores:
+                    StateManager.CurrentState = new HighScoresState();
                     break;
-                    */
                 case ButtonNames.Exit:
                     this.Exit();
                     break;

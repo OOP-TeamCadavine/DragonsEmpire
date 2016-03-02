@@ -40,7 +40,7 @@
             if (buttonScoreArea.Contains(new Point(Mouse.GetState().X, Mouse.GetState().Y))
                 && Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
-                this.OnButtonClicked(ButtonNames.Score);
+                this.OnButtonClicked(ButtonNames.Scores);
             }
 
             if (buttonExitArea.Contains(new Point(Mouse.GetState().X, Mouse.GetState().Y))
