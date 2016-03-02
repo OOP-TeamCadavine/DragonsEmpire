@@ -28,6 +28,7 @@
         public static Texture2D okButton;
         public static Texture2D errorBackground;
         public static Texture2D gameOverBackground;
+        public static Texture2D scoresBackground;
 
         public static SpriteFont name;
         public static SpriteFont dragonsKilled;
@@ -71,6 +72,8 @@
             dragonsKilled = game.Content.Load<SpriteFont>("dragons");
 
             gameOverBackground = game.Content.Load<Texture2D>("gameover");
+
+            scoresBackground = game.Content.Load<Texture2D>("scores");
         }
     }
 }

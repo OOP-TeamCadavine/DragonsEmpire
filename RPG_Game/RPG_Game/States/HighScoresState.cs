@@ -13,13 +13,17 @@
         public HighScoresState()
         {
             this.scores.Load();
+            this.scores.Save("Tedi", 600);
         }
 
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            throw new NotImplementedException();
-        }
+            spriteBatch.Begin();
+            spriteBatch.Draw(Assets.scoresBackground, Vector2.Zero);
+
+            spriteBatch.End();
+         }
 
         public override void Update(GameTime gameTime)
         {
