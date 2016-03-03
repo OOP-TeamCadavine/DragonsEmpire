@@ -3,46 +3,53 @@
     using System.Collections.Generic;
     using System.IO;
 
-    public class HighScores
+    public static class HighScores
     {
-        private const string ScoresPath = "../../../Content/HighScores.txt";
+        private static string scoresPath = "../../../Content/HighScores.txt";
 
-        private Dictionary<string, int> scores = new Dictionary<string, int>();
-        private int lowestScore;
+        private static Dictionary<string, int> scores = new Dictionary<string, int>();
 
-        public Dictionary<string, int> Scores
+        public static Dictionary<string, int> GetScores()
         {
-            get
-            {
-                return this.scores;
-            }
-        }
+            return scores;
+        }       
 
-        public void Load()
+        public static void Load()
         {
-            using (StreamReader fileReader = new StreamReader("../../../Content/HighScores.txt"))
+            using (StreamReader fileReader = new StreamReader(scoresPath))
             {
                 string line = fileReader.ReadLine();
                 string[] input;
 
-                while (line != null && string.IsNullOrEmpty(line))
+                while (!string.IsNullOrEmpty(line))
                 {
                     input = line.Split(' ');
-                        this.scores.Add(input[0], int.Parse(input[1]));
+                    string name = input[0];
+                    int experience = int.Parse(input[1]);
+
+
+                    if (!scores.ContainsKey(name))
+                    {
+                        scores.Add(name, experience);
+                    }
+                    else
+                    {
+                        if (scores[name] < experience)
+                        {
+                            scores[name] = experience;
+                        }
+                    }    
 
                     line = fileReader.ReadLine();
                 }
             }
         }
 
-        public void Save(string name, int score)
+        public static void Save(string name, int score)
         {
-            using (StreamWriter fileWriter = new StreamWriter("../../../Content/HighScores.txt", true))
+            using (StreamWriter fileWriter = new StreamWriter(scoresPath, true))
             {
-                if (scores.Count < 10 || score > lowestScore )
-                {
-                    fileWriter.WriteLine("{0} {1}", name, score);
-                }
+                fileWriter.WriteLine("{0} {1}", name, score);
             }
         }    
     }
