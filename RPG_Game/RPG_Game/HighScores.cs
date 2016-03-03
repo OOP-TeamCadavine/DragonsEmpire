@@ -6,9 +6,6 @@
     public class HighScores
     {
         private const string ScoresPath = "../../../Content/HighScores.txt";
-        private StreamReader fileReader = new StreamReader(ScoresPath);
-        // TODO: Fix writing and reading at the same time
-        private StreamWriter fileWriter = new StreamWriter("../../../Content/Scores.txt");
 
         private Dictionary<string, int> scores = new Dictionary<string, int>();
         private int lowestScore;
@@ -23,28 +20,28 @@
 
         public void Load()
         {
-            using (this.fileReader)
+            using (StreamReader fileReader = new StreamReader("../../../Content/HighScores.txt"))
             {
-                string line = this.fileReader.ReadLine();
+                string line = fileReader.ReadLine();
                 string[] input;
 
-                while (line != null)
+                while (line != null && string.IsNullOrEmpty(line))
                 {
                     input = line.Split(' ');
                         this.scores.Add(input[0], int.Parse(input[1]));
 
-                    line = this.fileReader.ReadLine();
+                    line = fileReader.ReadLine();
                 }
             }
         }
 
         public void Save(string name, int score)
         {
-            using (this.fileWriter)
+            using (StreamWriter fileWriter = new StreamWriter("../../../Content/HighScores.txt", true))
             {
                 if (scores.Count < 10 || score > lowestScore )
                 {
-                    fileWriter.Write("{0} {1}", name, score);
+                    fileWriter.WriteLine("{0} {1}", name, score);
                 }
             }
         }    

@@ -14,6 +14,7 @@
         {
             this.scores.Load();
             this.scores.Save("Tedi", 600);
+            this.scores.Save("Teo", 500);
         }
 
 
