@@ -9,6 +9,8 @@ using Microsoft.Xna.Framework.Input;
 
 namespace RPG_Game.States
 {
+    using RPG_Game.Common;
+
     public class EnterNameState : State
     {
         public event ButtonClickedEventHandler ButtonClicked;

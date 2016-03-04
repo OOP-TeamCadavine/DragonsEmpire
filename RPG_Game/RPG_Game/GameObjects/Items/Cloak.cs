@@ -5,6 +5,8 @@ using RPG_Game.Attributes;
 
 namespace RPG_Game.GameObjects.Items
 {
+    using RPG_Game.Common;
+
     [Item]
     public class Cloak : Item, IDefenseRestore
     {

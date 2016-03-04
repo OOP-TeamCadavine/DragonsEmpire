@@ -5,6 +5,8 @@ using RPG_Game.Attributes;
 
 namespace RPG_Game.GameObjects.Characters.Enemy
 {
+    using Common;
+
     [Enemy]
     public class BlueDragon : Enemy
     {

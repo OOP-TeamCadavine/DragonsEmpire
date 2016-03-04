@@ -9,6 +9,8 @@
 
     using Attributes;
 
+    using RPG_Game.Common;
+
     public class MapInitializer
     {
         public const int MinLength = 100;

@@ -4,6 +4,8 @@ using RPG_Game.Interfaces;
 
 namespace RPG_Game.GameObjects.Characters
 {
+    using Common;
+
     public abstract class Character : GameObject, ICharacter
     {
         private readonly int InitialHealth;
@@ -41,20 +43,11 @@ namespace RPG_Game.GameObjects.Characters
 
         public int Damage { get; set; }
 
-        public void Attack(ICharacter target)
+        public virtual void Attack(ICharacter target)
         {
-            var initialTargetHealth = target.HealthPoints;
-            target.HealthPoints -= this.Damage + this.AttackPoints - target.DefensePoints;
-            var targetHealthLost = initialTargetHealth - target.HealthPoints;
-            if (this is IExperience)
-            {
-                ((IExperience)this).Experience += targetHealthLost;
-                if (target.HealthPoints <= 0)
-                {
-                    ((IExperience)this).DragonsKilled += 1;
-                }
-            }
+            target.HealthPoints -= this.Damage + this.AttackPoints - target.DefensePoints;  
         }
+    
 
         public override void Update(GameTime gameTime)
         {

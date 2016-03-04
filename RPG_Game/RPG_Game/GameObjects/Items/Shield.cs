@@ -5,6 +5,8 @@ using Microsoft.Xna.Framework;
 
 namespace RPG_Game.GameObjects.Items
 {
+    using RPG_Game.Common;
+
     [Item]
     public class Shield : Item, IDefenseRestore
     {

@@ -8,6 +8,8 @@ using RPG_Game.States;
 
 namespace RPG_Game
 {
+    using RPG_Game.Common;
+
     /// <summary>
     /// This is the main type for your game.
     /// </summary>

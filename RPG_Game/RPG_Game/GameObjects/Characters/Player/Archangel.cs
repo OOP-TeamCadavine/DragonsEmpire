@@ -1,10 +1,9 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-
-namespace RPG_Game.GameObjects.Characters.Player
+﻿namespace RPG_Game.GameObjects.Characters.Player
 {
+    using Common;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+
     public class Archangel : Player
     {
         private const int DefaultHealth = 1000;
@@ -12,44 +11,64 @@ namespace RPG_Game.GameObjects.Characters.Player
         private const int DefaultAttack = 30;
         private const int DefaultDefense = 30;
         private const int DefaultSpeed = 5;
-        private static readonly Texture2D image = Assets.archangel; 
 
         // define the size of our animation frame
-        private const int frameHeight = 140;
-        private const int frameWidth = 150;
+        private const int FrameHeight = 140;
+        private const int FrameWidth = 150;
 
         // total number of frames in our spritesheet
-        private const int totalFrames = 8;
+        private const int TotalFrames = 8;
+
+        private static readonly Texture2D ArchangelImage = Assets.archangel;
+        private readonly Vector2 Origin = Vector2.Zero;
 
         private float time;
+
         // duration of time to show each frame
         private float frameTime = 0.1f;
+
         // an index of the current frame being shown
         private int frameIndex;
               
         private Rectangle source;
-        private readonly Vector2 Origin = Vector2.Zero;
 
         public Archangel(Position position, string name)
             : this(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage, DefaultSpeed, name)
         {
         }
+
         public Archangel(Position position, int attackPoints, int defensePoints, int healthPoints, int damage, int speed, string name)
-            : base(position, attackPoints, defensePoints, healthPoints, damage, speed, image, name)
+            : base(position, attackPoints, defensePoints, healthPoints, damage, speed, ArchangelImage, name)
         {
         }               
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            if (IsMovingRight || IsMovingDown)
+            if (this.IsMovingRight || this.IsMovingDown)
             {
-                spriteBatch.Draw(Assets.archangelFly, new Vector2(this.Position.XCoord, this.Position.YCoord), source, Color.White, 0.0f,
-      Origin, 1.0f, SpriteEffects.None, 0.0f);
+                spriteBatch.Draw(
+                    Assets.archangelFly,
+                    new Vector2(this.Position.XCoord, this.Position.YCoord),
+                    this.source,
+                    Color.White,
+                    0.0f,
+                    this.Origin,
+                    1.0f,
+                    SpriteEffects.None,
+                    0.0f);
             }
-            else if (IsMovingLeft || IsMovingUp)
+            else if (this.IsMovingLeft || this.IsMovingUp)
             {
-                spriteBatch.Draw(Assets.archangelFlyLeft, new Vector2(this.Position.XCoord, this.Position.YCoord), source, Color.White, 0.0f,
-      Origin, 1.0f, SpriteEffects.None, 0.0f);
+                spriteBatch.Draw(
+                    Assets.archangelFlyLeft,
+                    new Vector2(this.Position.XCoord, this.Position.YCoord),
+                    this.source,
+                    Color.White,
+                    0.0f,
+                    this.Origin,
+                    1.0f,
+                    SpriteEffects.None,
+                    0.0f);
             }
             else
             {
@@ -60,43 +79,44 @@ namespace RPG_Game.GameObjects.Characters.Player
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);            
-            if (IsMovingDown || IsMovingRight)
+            if (this.IsMovingDown || this.IsMovingRight)
             {
-                AnimateMovingRight(gameTime);
+                this.AnimateMovingRight(gameTime);
             }
-            else if (IsMovingLeft || IsMovingUp)
+            else if (this.IsMovingLeft || this.IsMovingUp)
             {
-                AnimateMovingLeft(gameTime);
+                this.AnimateMovingLeft(gameTime);
             }
-            source = new Rectangle(frameIndex * frameWidth, 0, frameWidth, frameHeight);
 
+            this.source = new Rectangle(this.frameIndex * FrameWidth, 0, FrameWidth, FrameHeight);
         }
 
         private void AnimateMovingLeft(GameTime gameTime)
         {
-            time += (float) gameTime.ElapsedGameTime.TotalSeconds;
-            if (time > frameTime)
+            this.time += (float) gameTime.ElapsedGameTime.TotalSeconds;
+            if (this.time > this.frameTime)
             {
-                frameIndex--;
-                time = 0f;
+                this.frameIndex--;
+                this.time = 0f;
             }
-            if (frameIndex < 0)
+            if (this.frameIndex < 0)
             {
-                frameIndex = totalFrames - 1;
+                this.frameIndex = TotalFrames - 1;
             }
         }
 
         private void AnimateMovingRight(GameTime gameTime)
         {
-            time += (float) gameTime.ElapsedGameTime.TotalSeconds;
-            if (time > frameTime)
+            this.time += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (this.time > this.frameTime)
             {
-                frameIndex++;
-                time = 0f;
+                this.frameIndex++;
+                this.time = 0f;
             }
-            if (frameIndex >= totalFrames)
+
+            if (this.frameIndex >= TotalFrames)
             {
-                frameIndex = 0;
+                this.frameIndex = 0;
             }
         }
     }

@@ -6,6 +6,8 @@
 
     using Events;
 
+    using RPG_Game.Common;
+
     public class MainMenuState : State
     {        
         public event ButtonClickedEventHandler ButtonClicked;

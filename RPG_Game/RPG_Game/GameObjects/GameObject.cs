@@ -1,10 +1,10 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-
-namespace RPG_Game.GameObjects
+﻿namespace RPG_Game.GameObjects
 {
-    using RPG_Game.Interfaces;
+    using System;
+    using Common;
+    using Interfaces;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
 
     public abstract class GameObject : IGameObject
     {
@@ -30,6 +30,7 @@ namespace RPG_Game.GameObjects
                 this.image = value;
             }
         }
+
         public Position Position { get; set; }
 
         public bool Exists { get; set; }
@@ -40,6 +41,5 @@ namespace RPG_Game.GameObjects
 
         public abstract void Update(GameTime gameTime);
     }
-
 }
 

@@ -1,34 +1,43 @@
 ﻿namespace RPG_Game.GameObjects.Characters.Player
 {
     using System;
-    using System.Collections.Specialized;
+    using Common;
+    using Exceptions;
+    using Interfaces;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
-    
-    using Exceptions;
-    
-    using Interfaces;
 
-    public abstract class Player : Character, IMovable,IExperience
+    public abstract class Player : Character, IMovable
     {
         private const int WindowWidth = 1200;
         private const int WindowHeight = 700;
         private string name;
-        private int experience;
 
-        protected Player(Position position, int attackPoints, int defensePoints,
-            int healthPoints, int damage, int speed, Texture2D image, string name)
+        protected Player(
+            Position position,
+            int attackPoints,
+            int defensePoints,
+            int healthPoints,
+            int damage,
+            int speed,
+            Texture2D image,
+            string name)
             : base(position, attackPoints, defensePoints, healthPoints, damage, image)
         {
             this.Speed = speed;
             this.Name = name;
-            this.Experience = 0;
-            this.DragonsKilled = 0;
+            this.Score = new Score(0, 0);
         }
+
+        public Score Score { get; set; }
 
         public string Name
         {
-            get { return this.name; }
+            get
+            {
+                return this.name;
+            }
+
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -41,22 +50,7 @@
                 }
                 this.name = value;
             }
-        }
-
-        public int Experience
-        {
-            get { return this.experience; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-                this.experience = value;
-            }
-        }
-
-        public int DragonsKilled { get; set; }
+        }       
 
         public bool IsMovingLeft { get; set; }
 
@@ -72,19 +66,33 @@
         {
             if (this.IsMovingLeft && this.Position.XCoord > 0)
             {
-                this.Position = new Position(this.Position.XCoord - Speed, this.Position.YCoord);
+                this.Position = new Position(this.Position.XCoord - this.Speed, this.Position.YCoord);
             }
             if (this.IsMovingRight && this.Position.XCoord < WindowWidth - this.Image.Width)
             {
-                this.Position = new Position(this.Position.XCoord + Speed, this.Position.YCoord);
+                this.Position = new Position(this.Position.XCoord + this.Speed, this.Position.YCoord);
             }
             if (this.IsMovingUp && this.Position.YCoord > 0)
             {
-                this.Position = new Position(this.Position.XCoord, this.Position.YCoord - Speed);
+                this.Position = new Position(this.Position.XCoord, this.Position.YCoord - this.Speed);
             }
             if (this.IsMovingDown && this.Position.YCoord < WindowHeight - this.Image.Height)
             {
-                this.Position = new Position(this.Position.XCoord, this.Position.YCoord + Speed);
+                this.Position = new Position(this.Position.XCoord, this.Position.YCoord + this.Speed);
+            }
+        }
+
+        public override void Attack(ICharacter target)
+        {
+            var initialTargetHealth = target.HealthPoints;
+            target.HealthPoints -= this.Damage + this.AttackPoints - target.DefensePoints;
+            var targetHealthLost = initialTargetHealth - target.HealthPoints;
+
+            this.Score.Experience += targetHealthLost;
+
+            if (target.HealthPoints <= 0)
+            {
+                this.Score.EnemyKilled += 1;
             }
         }
 
@@ -92,7 +100,7 @@
         {
             base.Update(gameTime);
             this.Move();
-            this.ColliderBox = new Rectangle(this.Position.XCoord + this.Image.Width / 4, this.Position.YCoord, this.Image.Width / 2, this.Image.Height);
+            this.ColliderBox = new Rectangle(this.Position.XCoord + (this.Image.Width / 4), this.Position.YCoord, this.Image.Width / 2, this.Image.Height);
         }
     }
 }

@@ -38,9 +38,10 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets.cs" />
+    <Compile Include="Common\Assets.cs" />
     <Compile Include="Attributes\EnemyAttribute.cs" />
     <Compile Include="Attributes\ItemAttribute.cs" />
+    <Compile Include="Common\Score.cs" />
     <Compile Include="Core\CollisionHandler.cs" />
     <Compile Include="Events\ButtonClickedEventArgs.cs" />
     <Compile Include="Events\ButtonClickedEventHandler.cs" />
@@ -63,7 +64,7 @@
     <Compile Include="GameObjects\Items\Pill.cs" />
     <Compile Include="GameObjects\Items\Shield.cs" />
     <Compile Include="GameObjects\Items\Sword.cs" />
-    <Compile Include="HighScores.cs" />
+    <Compile Include="Common\HighScores.cs" />
     <Compile Include="Interfaces\IAttack.cs" />
     <Compile Include="Interfaces\IAttackBoost.cs" />
     <Compile Include="Interfaces\ICharacter.cs" />
@@ -71,14 +72,13 @@
     <Compile Include="Interfaces\IDefense.cs" />
     <Compile Include="Interfaces\IDefenseRestore.cs" />
     <Compile Include="Interfaces\IDrawable.cs" />
-    <Compile Include="Interfaces\IExperience.cs" />
     <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IHeal.cs" />
     <Compile Include="Interfaces\IMovable.cs" />
     <Compile Include="Interfaces\IUpdateable.cs" />
     <Compile Include="Core\PlayerController.cs" />
     <Compile Include="Core\MapInitializer.cs" />
-    <Compile Include="Point.cs" />
+    <Compile Include="Common\Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="States\GameOverState.cs" />

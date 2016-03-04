@@ -2,6 +2,8 @@
 {
     using Microsoft.Xna.Framework.Graphics;
 
+    using RPG_Game.Common;
+
     public abstract class Enemy : Character
     {
         protected Enemy(Position position, int attackPoints, int defensePoints, int healthPoints, int damage, DragonType type, Texture2D image)

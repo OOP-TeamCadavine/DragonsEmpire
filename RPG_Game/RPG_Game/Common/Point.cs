@@ -1,4 +1,4 @@
-﻿namespace RPG_Game
+﻿namespace RPG_Game.Common
 {
     public struct Position
     {

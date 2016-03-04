@@ -3,6 +3,8 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
 
+    using RPG_Game.Common;
+
     public abstract class Item : GameObject
     {
         protected Item(Position position, Texture2D image)
