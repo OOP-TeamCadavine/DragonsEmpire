@@ -312,7 +312,7 @@
 /processorParam:TextureFormat=Compressed
 /build:dragons.spritefont
 
-#begin scores.png
+#begin highScores.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -321,5 +321,5 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:TextureFormat=Color
-/build:scores.png
+/build:highScores.png
 

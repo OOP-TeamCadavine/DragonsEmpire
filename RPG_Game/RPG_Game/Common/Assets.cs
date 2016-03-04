@@ -73,7 +73,7 @@
 
             gameOverBackground = game.Content.Load<Texture2D>("gameover");
 
-            scoresBackground = game.Content.Load<Texture2D>("scores");
+            scoresBackground = game.Content.Load<Texture2D>("highScores");
         }
     }
 }
