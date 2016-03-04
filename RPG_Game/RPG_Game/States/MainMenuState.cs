@@ -20,6 +20,7 @@
         {
             
         }
+
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.Begin();

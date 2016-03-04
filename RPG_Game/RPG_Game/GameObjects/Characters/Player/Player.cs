@@ -1,6 +1,4 @@
-﻿using RPG_Game.States;
-
-namespace RPG_Game.GameObjects.Characters.Player
+﻿namespace RPG_Game.GameObjects.Characters.Player
 {
     using System;
     using Common;
@@ -103,7 +101,8 @@ namespace RPG_Game.GameObjects.Characters.Player
             base.Update(gameTime);
             this.Move();
             this.ColliderBox = new Rectangle(this.Position.XCoord + (this.Image.Width / 4), this.Position.YCoord, this.Image.Width / 2, this.Image.Height);
-            if (Exists == false)
+
+            if (this.Exists == false)
             {
                 HighScores.Save(this.Name, this.Score);
             }

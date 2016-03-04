@@ -1,11 +1,9 @@
-﻿using Microsoft.Xna.Framework.Input;
-
-namespace RPG_Game.States
+﻿namespace RPG_Game.States
 {
+    using System.Threading;
+    using Common;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
-
-    using RPG_Game.Common;
 
     public class GameOverState : State
     {
@@ -18,6 +16,8 @@ namespace RPG_Game.States
 
         public override void Update(GameTime gameTime)
         { 
+            Thread.Sleep(3000);
+            StateManager.CurrentState = new HighScoresState();
         }
     }
 }

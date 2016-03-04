@@ -1,14 +1,12 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using RPG_Game.Core;
-using RPG_Game.Events;
-using RPG_Game.States;
-
-namespace RPG_Game
+﻿namespace RPG_Game
 {
-    using RPG_Game.Common;
+    using Common;
+    using Core;
+    using Events;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+    using States;
 
     /// <summary>
     /// This is the main type for your game.
@@ -88,7 +86,8 @@ namespace RPG_Game
             {
                 StateManager.CurrentState.Update(gameTime);
             }
-            if (StateManager.CurrentState is GameOverState && Keyboard.GetState().IsKeyDown(Keys.Enter))
+
+            if (StateManager.CurrentState is HighScoresState && Keyboard.GetState().IsKeyDown(Keys.Enter))
             {
                 menu = new MainMenuState();
                 menu.ButtonClicked += new ButtonClickedEventHandler(MainMenu_ButtonClicked);
@@ -96,6 +95,7 @@ namespace RPG_Game
                 enterNameState = new EnterNameState();
                 enterNameState.ButtonClicked += new ButtonClickedEventHandler(GetNameState_ButtonClicked);
             }
+
             base.Update(gameTime);
         }
 

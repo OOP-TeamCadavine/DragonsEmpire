@@ -20,7 +20,11 @@
 
         public Texture2D Image
         {
-            get { return this.image; }
+            get
+            {
+                return this.image;
+            }
+
             set
             {
                 if (value == null)

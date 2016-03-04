@@ -50,23 +50,25 @@
             {
                 StateManager.CurrentState = new GameOverState();
             }
-
-            IList<IGameObject> items = this.entities.Where(i => i is Item).ToList();
-            IList<IGameObject> enemies = this.entities.Where(i => i is Enemy).ToList();
-
-            if (items.Count == 0)
+            else
             {
-                MapInitializer.GenerateItems(this.entities);
-            }
+                IList<IGameObject> items = this.entities.Where(i => i is Item).ToList();
+                IList<IGameObject> enemies = this.entities.Where(i => i is Enemy).ToList();
 
-            if (enemies.Count == 0)
-            {
-                MapInitializer.GenerateEnemies(this.entities);
-            }
+                if (items.Count == 0)
+                {
+                    MapInitializer.GenerateItems(this.entities);
+                }
 
-            this.health = player.HealthPoints.ToString();
-            this.killedDragons = player.Score.EnemyKilled.ToString();
-            this.experience = player.Score.Experience.ToString();
+                if (enemies.Count == 0)
+                {
+                    MapInitializer.GenerateEnemies(this.entities);
+                }
+
+                this.health = player.HealthPoints.ToString();
+                this.killedDragons = player.Score.EnemyKilled.ToString();
+                this.experience = player.Score.Experience.ToString();
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)

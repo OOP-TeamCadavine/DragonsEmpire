@@ -8,7 +8,7 @@ namespace RPG_Game.GameObjects.Characters
 
     public abstract class Character : GameObject, ICharacter
     {
-        private readonly int InitialHealth;
+        private readonly int initialHealth;
 
         private int healthPoints;
 
@@ -23,7 +23,7 @@ namespace RPG_Game.GameObjects.Characters
         {
             this.AttackPoints = attackPoints;
             this.DefensePoints = defensePoints;
-            this.InitialHealth = healthPoints;
+            this.initialHealth = healthPoints;
             this.HealthPoints = healthPoints;
             this.Damage = damage;
         }
@@ -34,10 +34,14 @@ namespace RPG_Game.GameObjects.Characters
 
         public int HealthPoints
         {
-            get { return this.healthPoints; }
+            get
+            {
+                return this.healthPoints;
+            }
+
             set
             {
-                this.healthPoints = value > this.InitialHealth ? this.InitialHealth : value;
+                this.healthPoints = value > this.initialHealth ? this.initialHealth : value;
             }
         }
 

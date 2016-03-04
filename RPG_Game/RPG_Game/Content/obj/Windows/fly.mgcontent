@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/Programming/Teamworks/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/fly.png</SourceFile>
-  <SourceTime>2015-12-12T20:07:44.7611774+02:00</SourceTime>
-  <DestFile>D:/Programming/Teamworks/Cadavine/RPG_Game/RPG_Game/RPG_Game/Content/bin/Windows/fly.xnb</DestFile>
-  <DestTime>2016-03-04T13:33:12.1541785+02:00</DestTime>
+  <SourceFile>D:/SoftUni/DragonsEmpire/RPG_Game/RPG_Game/Content/fly.png</SourceFile>
+  <SourceTime>2016-03-02T19:03:54.5094196+02:00</SourceTime>
+  <DestFile>D:/SoftUni/DragonsEmpire/RPG_Game/RPG_Game/Content/bin/Windows/fly.xnb</DestFile>
+  <DestTime>2016-03-05T01:20:07.6881822+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-29T20:14:44+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

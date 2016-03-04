@@ -1,18 +1,12 @@
-﻿using System;
-
-namespace RPG_Game.States
+﻿namespace RPG_Game.States
 {
     using System.Linq;
+    using Common;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
-    using RPG_Game.Common;
 
     public class HighScoresState : State
     {
-        public HighScoresState()
-        {
-        }
-
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.Begin();
