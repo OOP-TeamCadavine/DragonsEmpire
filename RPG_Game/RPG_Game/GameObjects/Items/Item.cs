@@ -21,7 +21,6 @@
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-
             spriteBatch.Draw(this.Image, new Vector2(this.Position.XCoord, this.Position.YCoord));
         }
 

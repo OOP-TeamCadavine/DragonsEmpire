@@ -28,7 +28,6 @@
                     int enemyKilled = int.Parse(input[1]);
                     int experience = int.Parse(input[2]);
 
-
                     if (!scores.ContainsKey(name))
                     {
                         scores.Add(name, new Score(enemyKilled, experience));

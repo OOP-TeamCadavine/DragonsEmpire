@@ -24,7 +24,11 @@
 
         private Rectangle toolbarArea = new Rectangle(200, 500, 750, 350);
 
-        public GameState(string playerName, MapInitializer mapInitializer, PlayerController playerController, CollisionHandler collisionHandler)
+        public GameState(
+            string playerName,
+            MapInitializer mapInitializer,
+            PlayerController playerController,
+            CollisionHandler collisionHandler)
         {
             this.playerName = playerName;
             player = new Archangel(new Position(0, 0), playerName);

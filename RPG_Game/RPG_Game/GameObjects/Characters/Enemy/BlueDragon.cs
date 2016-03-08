@@ -26,7 +26,5 @@ namespace RPG_Game.GameObjects.Characters.Enemy
         {
             spriteBatch.Draw(Assets.blueDragon, new Vector2(this.Position.XCoord, this.Position.YCoord));
         }
-
-        
     }
 }

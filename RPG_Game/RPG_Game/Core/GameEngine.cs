@@ -40,9 +40,9 @@
         protected override void Initialize()
         {
             this.IsMouseVisible = true;
-            MainMenuState menu = new MainMenuState();
-            menu.ButtonClicked += new ButtonClickedEventHandler(MainMenu_ButtonClicked);
-            StateManager.CurrentState = menu;
+            MainMenuState mainMenuState = new MainMenuState();
+            mainMenuState.ButtonClicked += new ButtonClickedEventHandler(MainMenu_ButtonClicked);
+            StateManager.CurrentState = mainMenuState;
             enterNameState = new EnterNameState();
             enterNameState.ButtonClicked += new ButtonClickedEventHandler(GetNameState_ButtonClicked);
             mapInitializer = new MapInitializer();
@@ -51,7 +51,6 @@
 
             base.Initialize();
         }
-      
 
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
