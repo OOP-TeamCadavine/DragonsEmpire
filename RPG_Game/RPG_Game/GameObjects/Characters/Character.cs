@@ -1,5 +1,7 @@
 ﻿namespace RPG_Game.GameObjects.Characters
 {
+    using System;
+
     using Common;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
@@ -7,6 +9,7 @@
 
     public abstract class Character : GameObject, ICharacter
     {
+        private const int CriticalHitChance = 6;
         private readonly int initialHealth;
 
         private int healthPoints;
@@ -48,7 +51,15 @@
 
         public virtual void Attack(ICharacter target)
         {
-            target.HealthPoints -= this.Damage + this.AttackPoints - target.DefensePoints;  
+            Random rnd = new Random();
+            int criticalHit = rnd.Next(0, 100);
+            int multiplier = 1;
+            if (criticalHit < CriticalHitChance)
+            {
+                multiplier = 0;
+            }
+
+            target.HealthPoints -= Math.Max(this.Damage + this.AttackPoints - (target.DefensePoints * multiplier), 0);  
         }
     
 

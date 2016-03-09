@@ -89,6 +89,8 @@
         {
             var initialTargetHealth = target.HealthPoints;
             target.HealthPoints -= this.Damage + this.AttackPoints - target.DefensePoints;
+
+
             var targetHealthLost = initialTargetHealth - target.HealthPoints;
 
             this.Score.Experience += targetHealthLost;

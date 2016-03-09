@@ -1,7 +1,6 @@
-﻿namespace RPG_Game
+﻿namespace RPG_Game.Core
 {
     using Common;
-    using Core;
     using Events;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
@@ -13,8 +12,8 @@
     /// </summary>
     public class GameEngine : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
         private MapInitializer mapInitializer;
         private PlayerController playerController;
         private CollisionHandler collisionHandler;
@@ -24,11 +23,11 @@
 
         public GameEngine()
         {
-            graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
-            graphics.PreferredBackBufferHeight = 700;
-            graphics.PreferredBackBufferWidth = 1200;
-            graphics.ApplyChanges();
+            this.graphics = new GraphicsDeviceManager(this);
+            this.Content.RootDirectory = "Content";
+            this.graphics.PreferredBackBufferHeight = 700;
+            this.graphics.PreferredBackBufferWidth = 1200;
+            this.graphics.ApplyChanges();
         }
 
         /// <summary>
@@ -41,13 +40,13 @@
         {
             this.IsMouseVisible = true;
             MainMenuState mainMenuState = new MainMenuState();
-            mainMenuState.ButtonClicked += new ButtonClickedEventHandler(MainMenu_ButtonClicked);
+            mainMenuState.ButtonClicked += new ButtonClickedEventHandler(this.MainMenuButtonClicked);
             StateManager.CurrentState = mainMenuState;
-            enterNameState = new EnterNameState();
-            enterNameState.ButtonClicked += new ButtonClickedEventHandler(GetNameState_ButtonClicked);
-            mapInitializer = new MapInitializer();
-            playerController = new PlayerController();
-            collisionHandler = new CollisionHandler();
+            this.enterNameState = new EnterNameState();
+            this.enterNameState.ButtonClicked += new ButtonClickedEventHandler(this.GetNameStateButtonClicked);
+            this.mapInitializer = new MapInitializer();
+            this.playerController = new PlayerController();
+            this.collisionHandler = new CollisionHandler();
 
             base.Initialize();
         }
@@ -59,7 +58,7 @@
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            this.spriteBatch = new SpriteBatch(this.GraphicsDevice);
             Assets.Init(this);
         }
 
@@ -78,9 +77,12 @@
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();   
-            
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed
+                || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                this.Exit();
+            }
+                
             if (StateManager.CurrentState != null)
             {
                 StateManager.CurrentState.Update(gameTime);
@@ -88,11 +90,11 @@
 
             if (StateManager.CurrentState is HighScoresState && Keyboard.GetState().IsKeyDown(Keys.Enter))
             {
-                menu = new MainMenuState();
-                menu.ButtonClicked += new ButtonClickedEventHandler(MainMenu_ButtonClicked);
-                StateManager.CurrentState = menu;
-                enterNameState = new EnterNameState();
-                enterNameState.ButtonClicked += new ButtonClickedEventHandler(GetNameState_ButtonClicked);
+                this.menu = new MainMenuState();
+                this.menu.ButtonClicked += new ButtonClickedEventHandler(this.MainMenuButtonClicked);
+                StateManager.CurrentState = this.menu;
+                this.enterNameState = new EnterNameState();
+                this.enterNameState.ButtonClicked += new ButtonClickedEventHandler(this.GetNameStateButtonClicked);
             }
 
             base.Update(gameTime);
@@ -104,22 +106,22 @@
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            this.GraphicsDevice.Clear(Color.CornflowerBlue);
 
             if (StateManager.CurrentState != null)
             {
-                StateManager.CurrentState.Draw(spriteBatch, gameTime);
+                StateManager.CurrentState.Draw(this.spriteBatch, gameTime);
             }
           
             base.Draw(gameTime);
         }
 
-        private void MainMenu_ButtonClicked(object sender, ButtonClickedEventArgs eventArgs)
+        private void MainMenuButtonClicked(object sender, ButtonClickedEventArgs eventArgs)
         {
             switch (eventArgs.Button)
             {
                 case ButtonNames.Play:
-                    StateManager.CurrentState = enterNameState;
+                    StateManager.CurrentState = this.enterNameState;
                     break;                   
                 case ButtonNames.Scores:
                     StateManager.CurrentState = new HighScoresState();
@@ -130,13 +132,13 @@
             }
         }
 
-        private void GetNameState_ButtonClicked(object sender, ButtonClickedEventArgs eventArgs)
+        private void GetNameStateButtonClicked(object sender, ButtonClickedEventArgs eventArgs)
         {
             switch (eventArgs.Button)
             {
                     case ButtonNames.Done:
-                    playerName = enterNameState.PlayerName;
-                    StateManager.CurrentState = new GameState(playerName, mapInitializer, playerController, collisionHandler);
+                    this.playerName = this.enterNameState.PlayerName;
+                    StateManager.CurrentState = new GameState(this.playerName, this.mapInitializer, this.playerController, this.collisionHandler);
                     break;
             }
         }

@@ -2,6 +2,8 @@
 
 namespace RPG_Game
 {
+    using RPG_Game.Core;
+
 #if WINDOWS || LINUX
     /// <summary>
     /// The main class.

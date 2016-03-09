@@ -1,6 +1,7 @@
 ﻿namespace RPG_Game.Common
 {
     using Microsoft.Xna.Framework.Graphics;
+    using RPG_Game.Core;
 
     public static class Assets
     {
