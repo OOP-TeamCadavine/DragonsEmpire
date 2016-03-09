@@ -68,14 +68,17 @@
             {
                 this.Position = new Position(this.Position.XCoord - this.Speed, this.Position.YCoord);
             }
+
             if (this.IsMovingRight && this.Position.XCoord < WindowWidth - this.Image.Width)
             {
                 this.Position = new Position(this.Position.XCoord + this.Speed, this.Position.YCoord);
             }
+
             if (this.IsMovingUp && this.Position.YCoord > 0)
             {
                 this.Position = new Position(this.Position.XCoord, this.Position.YCoord - this.Speed);
             }
+
             if (this.IsMovingDown && this.Position.YCoord < WindowHeight - this.Image.Height)
             {
                 this.Position = new Position(this.Position.XCoord, this.Position.YCoord + this.Speed);

@@ -1,20 +1,19 @@
-﻿using RPG_Game.Interfaces;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using RPG_Game.Attributes;
-
-namespace RPG_Game.GameObjects.Items
+﻿namespace RPG_Game.GameObjects.Items
 {
+    using Microsoft.Xna.Framework.Graphics;
+    using RPG_Game.Attributes;
     using RPG_Game.Common;
+    using RPG_Game.Interfaces;
 
     [Item]
     public class Konay : Item, IAttackBoost 
     {
         private const int DefaultAttackBoost = 23;
-        private static readonly Texture2D image = Assets.konay;
+
+        private static readonly Texture2D ImageKonay = Assets.konay;
 
         public Konay(Position position)
-            : base(position, image)
+            : base(position, ImageKonay)
         {
             this.AttackBoost = DefaultAttackBoost;
         }
@@ -24,8 +23,6 @@ namespace RPG_Game.GameObjects.Items
         public override string ToString()
         {
             return string.Format("{0}: Attack boosted ({1})", this.GetType().Name, this.AttackBoost);
-        }
-
-              
+        }        
     }
 }

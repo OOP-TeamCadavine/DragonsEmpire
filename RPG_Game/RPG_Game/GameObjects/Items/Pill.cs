@@ -1,20 +1,19 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using RPG_Game.Interfaces;
-using RPG_Game.Attributes;
-
-namespace RPG_Game.GameObjects.Items
+﻿namespace RPG_Game.GameObjects.Items
 {
+    using Microsoft.Xna.Framework.Graphics;
+    using RPG_Game.Attributes;
     using RPG_Game.Common;
+    using RPG_Game.Interfaces;
 
     [Item]
     public class Pill : Item, IHeal
     {
         private const int DefaultHealthRestore = 10;
-        private static readonly Texture2D image = Assets.pill;
+
+        private static readonly Texture2D ImagePill = Assets.pill;
 
         public Pill(Position position)
-            : base(position, image)
+            : base(position, ImagePill)
         {
             this.HealthRestore = DefaultHealthRestore;
         }

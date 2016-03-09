@@ -13,7 +13,7 @@
 
     public class GameState : State
     {
-        public static Player player;
+        private Player player;
         private readonly string playerName;
         private List<IGameObject> entities;
         private PlayerController playerController;
@@ -31,7 +31,7 @@
             CollisionHandler collisionHandler)
         {
             this.playerName = playerName;
-            player = new Archangel(new Position(0, 0), playerName);
+            this.player = new Archangel(new Position(0, 0), playerName);
             this.playerController = playerController;
             this.collisionHandler = collisionHandler;
             this.entities = mapInitializer.PopulateMap();
@@ -48,9 +48,9 @@
             }
 
             this.entities.RemoveAll(x => !x.Exists);
-            player.Update(gameTime);
+            this.player.Update(gameTime);
 
-            if (!player.Exists)
+            if (!this.player.Exists)
             {
                 StateManager.CurrentState = new GameOverState();
             }
@@ -69,9 +69,9 @@
                     MapInitializer.GenerateEnemies(this.entities);
                 }
 
-                this.health = player.HealthPoints.ToString();
-                this.killedDragons = player.Score.EnemyKilled.ToString();
-                this.experience = player.Score.Experience.ToString();
+                this.health = this.player.HealthPoints.ToString();
+                this.killedDragons = this.player.Score.EnemyKilled.ToString();
+                this.experience = this.player.Score.Experience.ToString();
             }
         }
 
@@ -89,9 +89,14 @@
                 entity.Draw(spriteBatch, gameTime);
             }
 
-            player.Draw(spriteBatch, gameTime);
+            this.player.Draw(spriteBatch, gameTime);
 
             spriteBatch.End();
+        }
+
+        public Player GetPlayer()
+        {
+            return this.player;
         }
     }
 }

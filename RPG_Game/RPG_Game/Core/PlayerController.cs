@@ -1,45 +1,54 @@
-﻿using Microsoft.Xna.Framework.Input;
-using RPG_Game.States;
-using System;
-namespace RPG_Game
+﻿namespace RPG_Game.Core
 {
+    using Microsoft.Xna.Framework.Input;
+    using RPG_Game.States;
+
     public class PlayerController
     {
         public void HandleInput()
         {
             if (StateManager.CurrentState is GameState)
             {
+                GameState gameState = (GameState)StateManager.CurrentState;
+
                 if (Keyboard.GetState().IsKeyDown(Keys.Left))
                 {
-                    GameState.player.IsMovingLeft = true;                    
+                    gameState.GetPlayer().IsMovingLeft = true;                    
                 }
+
                 if (Keyboard.GetState().IsKeyDown(Keys.Right))
                 {
-                    GameState.player.IsMovingRight = true;                  
+                    gameState.GetPlayer().IsMovingRight = true;                  
                 }
+
                 if (Keyboard.GetState().IsKeyDown(Keys.Up))
                 {
-                    GameState.player.IsMovingUp = true;
+                    gameState.GetPlayer().IsMovingUp = true;
                 }
+
                 if (Keyboard.GetState().IsKeyDown(Keys.Down))
                 {
-                    GameState.player.IsMovingDown = true;
+                    gameState.GetPlayer().IsMovingDown = true;
                 }
+
                 if (Keyboard.GetState().IsKeyUp(Keys.Left))
                 {
-                    GameState.player.IsMovingLeft = false;
+                    gameState.GetPlayer().IsMovingLeft = false;
                 }
+
                 if (Keyboard.GetState().IsKeyUp(Keys.Right))
                 {
-                    GameState.player.IsMovingRight = false;
+                    gameState.GetPlayer().IsMovingRight = false;
                 }
+
                 if (Keyboard.GetState().IsKeyUp(Keys.Up))
                 {
-                    GameState.player.IsMovingUp = false;
+                    gameState.GetPlayer().IsMovingUp = false;
                 }
+
                 if (Keyboard.GetState().IsKeyUp(Keys.Down))
                 {
-                    GameState.player.IsMovingDown = false;
+                    gameState.GetPlayer().IsMovingDown = false;
                 }
             }
         }

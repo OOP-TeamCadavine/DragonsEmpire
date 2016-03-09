@@ -1,10 +1,8 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using RPG_Game.Attributes;
-
-namespace RPG_Game.GameObjects.Characters.Enemy
+﻿namespace RPG_Game.GameObjects.Characters.Enemy
 {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using RPG_Game.Attributes;
     using RPG_Game.Common;
 
     [Enemy]
@@ -15,10 +13,11 @@ namespace RPG_Game.GameObjects.Characters.Enemy
         private const int DefaultAttack = 30;
         private const int DefaultDefense = 25;
         private const DragonType DragonType = Characters.Enemy.DragonType.Golden;
-        private static readonly Texture2D image = Assets.goldenDragon;
+
+        private static readonly Texture2D GoldenDragonImage = Assets.goldenDragon;
 
         public GoldenDragon(Position position)
-            : base(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage, DragonType, image)
+            : base(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage, DragonType, GoldenDragonImage)
         {
         }
 
@@ -26,7 +25,5 @@ namespace RPG_Game.GameObjects.Characters.Enemy
         {
             spriteBatch.Draw(Assets.goldenDragon, new Vector2(this.Position.XCoord, this.Position.YCoord));
         }
-
-        
     }
 }

@@ -1,11 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using RPG_Game.Attributes;
-
-namespace RPG_Game.GameObjects.Characters.Enemy
+﻿namespace RPG_Game.GameObjects.Characters.Enemy
 {
     using Common;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using RPG_Game.Attributes;
 
     [Enemy]
     public class BlueDragon : Enemy
@@ -15,10 +13,11 @@ namespace RPG_Game.GameObjects.Characters.Enemy
         private const int DefaultAttack = 20;
         private const int DefaultDefense = 30;
         private const DragonType DragonType = Characters.Enemy.DragonType.Blue;
-        private static readonly Texture2D image = Assets.blueDragon;
+
+        private static readonly Texture2D BlueDragonImage = Assets.blueDragon;
 
         public BlueDragon(Position position)
-            : base(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage, DragonType, image)
+            : base(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage, DragonType, BlueDragonImage)
         {
         }               
 

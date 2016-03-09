@@ -20,7 +20,8 @@
         private const int TotalFrames = 8;
 
         private static readonly Texture2D ArchangelImage = Assets.archangel;
-        private readonly Vector2 Origin = Vector2.Zero;
+
+        private readonly Vector2 origin = Vector2.Zero;
 
         private float time;
 
@@ -52,7 +53,7 @@
                     this.source,
                     Color.White,
                     0.0f,
-                    this.Origin,
+                    this.origin,
                     1.0f,
                     SpriteEffects.None,
                     0.0f);
@@ -65,7 +66,7 @@
                     this.source,
                     Color.White,
                     0.0f,
-                    this.Origin,
+                    this.origin,
                     1.0f,
                     SpriteEffects.None,
                     0.0f);

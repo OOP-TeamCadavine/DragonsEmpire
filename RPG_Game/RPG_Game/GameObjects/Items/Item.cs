@@ -2,7 +2,6 @@
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
-
     using RPG_Game.Common;
 
     public abstract class Item : GameObject
@@ -15,14 +14,11 @@
         
         public override void Update(GameTime gameTime)
         {
-            
         }
-
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.Draw(this.Image, new Vector2(this.Position.XCoord, this.Position.YCoord));
         }
-
     }
 }

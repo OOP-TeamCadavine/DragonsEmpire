@@ -4,11 +4,8 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
-
-    using Interfaces;
-
     using Attributes;
-
+    using Interfaces;
     using RPG_Game.Common;
 
     public class MapInitializer

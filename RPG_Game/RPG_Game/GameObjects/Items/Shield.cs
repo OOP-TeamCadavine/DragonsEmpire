@@ -1,19 +1,19 @@
-﻿using RPG_Game.Interfaces;
-using Microsoft.Xna.Framework.Graphics;
-using RPG_Game.Attributes;
-using Microsoft.Xna.Framework;
-
-namespace RPG_Game.GameObjects.Items
+﻿namespace RPG_Game.GameObjects.Items
 {
+    using Microsoft.Xna.Framework.Graphics;
+    using RPG_Game.Attributes;
     using RPG_Game.Common;
+    using RPG_Game.Interfaces;
 
     [Item]
     public class Shield : Item, IDefenseRestore
     {
         private const int DefaultDefenseRestore = 10;
-        private static readonly Texture2D image = Assets.shield;
+
+        private static readonly Texture2D ImageShield = Assets.shield;
+
         public Shield(Position position)
-            : base(position, image)
+            : base(position, ImageShield)
         {
             this.DefenseRestore = DefaultDefenseRestore;
         }

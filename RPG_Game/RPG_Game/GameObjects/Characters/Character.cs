@@ -1,10 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using RPG_Game.Interfaces;
-
-namespace RPG_Game.GameObjects.Characters
+﻿namespace RPG_Game.GameObjects.Characters
 {
     using Common;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using RPG_Game.Interfaces;
 
     public abstract class Character : GameObject, ICharacter
     {

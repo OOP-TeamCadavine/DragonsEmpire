@@ -1,14 +1,9 @@
 ﻿namespace RPG_Game.Core
 {
     using System.Collections.Generic;
-
-    using Interfaces;
-
     using GameObjects.Characters.Player;
-
-    using GameObjects.Characters.Enemy;
-
     using GameObjects.Items;
+    using Interfaces;
 
     public class CollisionHandler
     {
@@ -24,7 +19,6 @@
                         if (entity is IHeal)
                         {
                             player.HealthPoints += ((IHeal)entity).HealthRestore;
-
                         }
                         else if (entity is IDefenseRestore)
                         {
