@@ -2,15 +2,12 @@
 {
     using System;
     using Common;
-    using Exceptions;
     using Interfaces;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
 
     public abstract class Player : Character, IMovable
     {
-        private const int WindowWidth = 1200;
-        private const int WindowHeight = 700;
         private string name;
 
         protected Player(
@@ -42,7 +39,7 @@
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new PlayerNameNullPointerException("Player name cannot be null or empty!");
+                    throw new NullReferenceException("Player name cannot be null or empty!");
                 }
                 else if (value.Length > 10)
                 {
@@ -69,7 +66,7 @@
                 this.Position = new Position(this.Position.XCoord - this.Speed, this.Position.YCoord);
             }
 
-            if (this.IsMovingRight && this.Position.XCoord < WindowWidth - this.Image.Width)
+            if (this.IsMovingRight && this.Position.XCoord < Constants.BackBufferWidth - this.Image.Width)
             {
                 this.Position = new Position(this.Position.XCoord + this.Speed, this.Position.YCoord);
             }
@@ -79,7 +76,7 @@
                 this.Position = new Position(this.Position.XCoord, this.Position.YCoord - this.Speed);
             }
 
-            if (this.IsMovingDown && this.Position.YCoord < WindowHeight - this.Image.Height)
+            if (this.IsMovingDown && this.Position.YCoord < Constants.BackBufferHeight - this.Image.Height)
             {
                 this.Position = new Position(this.Position.XCoord, this.Position.YCoord + this.Speed);
             }

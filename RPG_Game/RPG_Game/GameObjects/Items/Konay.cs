@@ -10,7 +10,7 @@
     {
         private const int DefaultAttackBoost = 23;
 
-        private static readonly Texture2D ImageKonay = Assets.konay;
+        private static readonly Texture2D ImageKonay = Assets.Konay;
 
         public Konay(Position position)
             : base(position, ImageKonay)

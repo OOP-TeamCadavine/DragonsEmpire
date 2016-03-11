@@ -5,76 +5,71 @@
 
     public static class Assets
     {
-        public static Texture2D gameBackground;
-        public static Texture2D archangelFly;
-        public static Texture2D archangelFlyLeft;
-        public static Texture2D archangel;
-        public static Texture2D pill;
-        public static Texture2D soup;
-        public static Texture2D cloak;
-        public static Texture2D shield;
-        public static Texture2D sword;
-        public static Texture2D konay;
-        public static Texture2D mainMenuImage;
-        public static Texture2D buttonPlay;
-        public static Texture2D buttonScore;
-        public static Texture2D buttonExit;
-        public static Texture2D blueDragon;
-        public static Texture2D blackDragon;
-        public static Texture2D goldenDragon;
-        public static Texture2D nameStateBackground;
-        public static Texture2D enterName;
-        public static Texture2D doneButton;
-        public static Texture2D toolbar;
-        public static Texture2D okButton;
-        public static Texture2D errorBackground;
-        public static Texture2D gameOverBackground;
-        public static Texture2D scoresBackground;
+        public static Texture2D GameBackground;
+        public static Texture2D ArchangelFly;
+        public static Texture2D ArchangelFlyLeft;
+        public static Texture2D Archangel;
+        public static Texture2D Pill;
+        public static Texture2D Soup;
+        public static Texture2D Cloak;
+        public static Texture2D Shield;
+        public static Texture2D Sword;
+        public static Texture2D Konay;
+        public static Texture2D MainMenuImage;
+        public static Texture2D ButtonPlay;
+        public static Texture2D ButtonScore;
+        public static Texture2D ButtonExit;
+        public static Texture2D BlueDragon;
+        public static Texture2D BlackDragon;
+        public static Texture2D GoldenDragon;
+        public static Texture2D NameStateBackground;
+        public static Texture2D EnterName;
+        public static Texture2D DoneButton;
+        public static Texture2D Toolbar;
+        public static Texture2D GameOverBackground;
+        public static Texture2D ScoresBackground;
 
-        public static SpriteFont name;
-        public static SpriteFont dragonsKilled;
-        public static SpriteFont health;
-        public static SpriteFont experience;
+        public static SpriteFont Name;
+        public static SpriteFont DragonsKilled;
+        public static SpriteFont Health;
+        public static SpriteFont Experience;
 
         public static void Init(GameEngine game)
         {
-            gameBackground = game.Content.Load<Texture2D>("background");
-            archangelFly = game.Content.Load<Texture2D>("fly");
-            archangelFlyLeft = game.Content.Load<Texture2D>("flyleft");
-            archangel = game.Content.Load<Texture2D>("arhangel");
-            toolbar = game.Content.Load<Texture2D>("toolbar");
+            GameBackground = game.Content.Load<Texture2D>("background");
+            ArchangelFly = game.Content.Load<Texture2D>("fly");
+            ArchangelFlyLeft = game.Content.Load<Texture2D>("flyleft");
+            Archangel = game.Content.Load<Texture2D>("arhangel");
+            Toolbar = game.Content.Load<Texture2D>("toolbar");
             
-            blueDragon = game.Content.Load<Texture2D>("blueDragon");
-            blackDragon = game.Content.Load<Texture2D>("blackDragon");
-            goldenDragon = game.Content.Load<Texture2D>("goldenDragon");
+            BlueDragon = game.Content.Load<Texture2D>("blueDragon");
+            BlackDragon = game.Content.Load<Texture2D>("blackDragon");
+            GoldenDragon = game.Content.Load<Texture2D>("goldenDragon");
 
-            pill = game.Content.Load<Texture2D>("pill");
-            soup = game.Content.Load<Texture2D>("soup");
-            cloak = game.Content.Load<Texture2D>("cloak");
-            shield = game.Content.Load<Texture2D>("shield");
-            sword = game.Content.Load<Texture2D>("sword");
-            konay = game.Content.Load<Texture2D>("konay");
+            Pill = game.Content.Load<Texture2D>("pill");
+            Soup = game.Content.Load<Texture2D>("soup");
+            Cloak = game.Content.Load<Texture2D>("cloak");
+            Shield = game.Content.Load<Texture2D>("shield");
+            Sword = game.Content.Load<Texture2D>("sword");
+            Konay = game.Content.Load<Texture2D>("konay");
 
-            mainMenuImage = game.Content.Load<Texture2D>("DragonsEmpire");
-            buttonPlay = game.Content.Load<Texture2D>("buttonPlay");
-            buttonScore = game.Content.Load<Texture2D>("buttonScore");
-            buttonExit = game.Content.Load<Texture2D>("buttonExit");
+            MainMenuImage = game.Content.Load<Texture2D>("DragonsEmpire");
+            ButtonPlay = game.Content.Load<Texture2D>("buttonPlay");
+            ButtonScore = game.Content.Load<Texture2D>("buttonScore");
+            ButtonExit = game.Content.Load<Texture2D>("buttonExit");
 
-            nameStateBackground = game.Content.Load<Texture2D>("saveName");
-            enterName = game.Content.Load<Texture2D>("emptySpace");
-            doneButton = game.Content.Load<Texture2D>("doneButton");
+            NameStateBackground = game.Content.Load<Texture2D>("saveName");
+            EnterName = game.Content.Load<Texture2D>("emptySpace");
+            DoneButton = game.Content.Load<Texture2D>("doneButton");
 
-            errorBackground = game.Content.Load<Texture2D>("error");
-            okButton = game.Content.Load<Texture2D>("okbutton");
+            Name = game.Content.Load<SpriteFont>("name");
+            Health = game.Content.Load<SpriteFont>("health");
+            Experience = game.Content.Load<SpriteFont>("experience");
+            DragonsKilled = game.Content.Load<SpriteFont>("dragons");
 
-            name = game.Content.Load<SpriteFont>("name");
-            health = game.Content.Load<SpriteFont>("health");
-            experience = game.Content.Load<SpriteFont>("experience");
-            dragonsKilled = game.Content.Load<SpriteFont>("dragons");
+            GameOverBackground = game.Content.Load<Texture2D>("gameover");
 
-            gameOverBackground = game.Content.Load<Texture2D>("gameover");
-
-            scoresBackground = game.Content.Load<Texture2D>("highScores");
+            ScoresBackground = game.Content.Load<Texture2D>("highScores");
         }
     }
 }

@@ -10,7 +10,7 @@
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(Assets.scoresBackground, Vector2.Zero);
+            spriteBatch.Draw(Assets.ScoresBackground, Vector2.Zero);
 
             HighScores.Load();
             int counter = 1;
@@ -22,17 +22,17 @@
                 string killed = score.Value.EnemyKilled.ToString();
 
                 spriteBatch.DrawString(
-                    Assets.name, 
+                    Assets.Name, 
                     string.Format("{0}. {1}", counter, score.Key.PadRight(20)), 
                     new Vector2(150, position), 
                     Color.White);
                 spriteBatch.DrawString(
-                    Assets.name,
+                    Assets.Name,
                     string.Format("{0}",  experience.PadLeft(50)),
                     new Vector2(150, position),
                     Color.White);
                 spriteBatch.DrawString(
-                    Assets.name,
+                    Assets.Name,
                     string.Format("{0}", killed.PadLeft(95)),
                     new Vector2(150, position),
                     Color.White);

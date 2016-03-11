@@ -10,7 +10,7 @@
     {
         private const int DefaultDefenseRestore = 10;
 
-        private static readonly Texture2D ImageShield = Assets.shield;
+        private static readonly Texture2D ImageShield = Assets.Shield;
 
         public Shield(Position position)
             : base(position, ImageShield)

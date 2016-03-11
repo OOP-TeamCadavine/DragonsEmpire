@@ -9,7 +9,6 @@
 
     public abstract class Character : GameObject, ICharacter
     {
-        private const int CriticalHitChance = 6;
         private readonly int initialHealth;
 
         private int healthPoints;
@@ -54,7 +53,7 @@
             Random rnd = new Random();
             int criticalHit = rnd.Next(0, 100);
             int multiplier = 1;
-            if (criticalHit < CriticalHitChance)
+            if (criticalHit < Constants.CriticalHitChance)
             {
                 multiplier = 0;
             }
@@ -62,7 +61,6 @@
             target.HealthPoints -= Math.Max(this.Damage + this.AttackPoints - (target.DefensePoints * multiplier), 0);  
         }
     
-
         public override void Update(GameTime gameTime)
         {
             if (this.HealthPoints <= 0)

@@ -14,7 +14,7 @@
         private const int DefaultDefense = 25;
         private const DragonType DragonType = Characters.Enemy.DragonType.Golden;
 
-        private static readonly Texture2D GoldenDragonImage = Assets.goldenDragon;
+        private static readonly Texture2D GoldenDragonImage = Assets.GoldenDragon;
 
         public GoldenDragon(Position position)
             : base(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage, DragonType, GoldenDragonImage)
@@ -23,7 +23,7 @@
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            spriteBatch.Draw(Assets.goldenDragon, new Vector2(this.Position.XCoord, this.Position.YCoord));
+            spriteBatch.Draw(Assets.GoldenDragon, new Vector2(this.Position.XCoord, this.Position.YCoord));
         }
     }
 }

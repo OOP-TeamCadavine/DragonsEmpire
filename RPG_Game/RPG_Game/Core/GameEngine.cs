@@ -24,9 +24,9 @@
         public GameEngine()
         {
             this.graphics = new GraphicsDeviceManager(this);
-            this.Content.RootDirectory = "Content";
-            this.graphics.PreferredBackBufferHeight = 700;
-            this.graphics.PreferredBackBufferWidth = 1200;
+            this.Content.RootDirectory = Constants.RootDirectory;
+            this.graphics.PreferredBackBufferHeight = Constants.BackBufferHeight;
+            this.graphics.PreferredBackBufferWidth = Constants.BackBufferWidth;
             this.graphics.ApplyChanges();
         }
 

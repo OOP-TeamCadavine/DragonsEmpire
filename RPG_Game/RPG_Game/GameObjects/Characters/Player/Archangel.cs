@@ -19,7 +19,7 @@
         // total number of frames in our spritesheet
         private const int TotalFrames = 8;
 
-        private static readonly Texture2D ArchangelImage = Assets.archangel;
+        private static readonly Texture2D ArchangelImage = Assets.Archangel;
 
         private readonly Vector2 origin = Vector2.Zero;
 
@@ -48,7 +48,7 @@
             if (this.IsMovingRight || this.IsMovingDown)
             {
                 spriteBatch.Draw(
-                    Assets.archangelFly,
+                    Assets.ArchangelFly,
                     new Vector2(this.Position.XCoord, this.Position.YCoord),
                     this.source,
                     Color.White,
@@ -61,7 +61,7 @@
             else if (this.IsMovingLeft || this.IsMovingUp)
             {
                 spriteBatch.Draw(
-                    Assets.archangelFlyLeft,
+                    Assets.ArchangelFlyLeft,
                     new Vector2(this.Position.XCoord, this.Position.YCoord),
                     this.source,
                     Color.White,
@@ -73,7 +73,7 @@
             }
             else
             {
-                spriteBatch.Draw(Assets.archangel, new Vector2(this.Position.XCoord, this.Position.YCoord));
+                spriteBatch.Draw(Assets.Archangel, new Vector2(this.Position.XCoord, this.Position.YCoord));
             }
         }        
 

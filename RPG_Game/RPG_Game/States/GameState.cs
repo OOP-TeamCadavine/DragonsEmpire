@@ -78,11 +78,11 @@
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(Assets.gameBackground, Vector2.Zero);     
-            spriteBatch.Draw(Assets.toolbar, this.toolbarArea, Color.White);
-            spriteBatch.DrawString(Assets.health, this.health, new Vector2(310,660), Color.White);
-            spriteBatch.DrawString(Assets.experience, this.experience, new Vector2(570, 660), Color.White);
-            spriteBatch.DrawString(Assets.dragonsKilled, this.killedDragons, new Vector2(790, 660), Color.White);
+            spriteBatch.Draw(Assets.GameBackground, Vector2.Zero);     
+            spriteBatch.Draw(Assets.Toolbar, this.toolbarArea, Color.White);
+            spriteBatch.DrawString(Assets.Health, this.health, new Vector2(310, 660), Color.White);
+            spriteBatch.DrawString(Assets.Experience, this.experience, new Vector2(570, 660), Color.White);
+            spriteBatch.DrawString(Assets.DragonsKilled, this.killedDragons, new Vector2(790, 660), Color.White);
 
             foreach (var entity in this.entities)
             {                

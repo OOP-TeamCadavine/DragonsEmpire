@@ -14,7 +14,7 @@
         private const int DefaultDefense = 30;
         private const DragonType DragonType = Characters.Enemy.DragonType.Black;
 
-        private static readonly Texture2D BlackDragonImage = Assets.blackDragon;
+        private static readonly Texture2D BlackDragonImage = Assets.BlackDragon;
 
         public BlackDragon(Position position)
             : base(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage, DragonType, BlackDragonImage)
@@ -23,7 +23,7 @@
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            spriteBatch.Draw(Assets.blackDragon, new Vector2(this.Position.XCoord, this.Position.YCoord));
+            spriteBatch.Draw(Assets.BlackDragon, new Vector2(this.Position.XCoord, this.Position.YCoord));
         }
     }
 }

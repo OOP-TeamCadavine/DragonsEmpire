@@ -10,7 +10,7 @@
     {
         private const int DefaultDefenseRestore = 15;
 
-        private static readonly Texture2D ImageCloak = Assets.cloak;
+        private static readonly Texture2D ImageCloak = Assets.Cloak;
 
         public Cloak(Position position)
             : base(position, ImageCloak)

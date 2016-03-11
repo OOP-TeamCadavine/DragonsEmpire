@@ -25,7 +25,7 @@
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException("Experience cannot be negative.");
                 }
 
                 this.experience = value;
@@ -43,7 +43,7 @@
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException("Enemy killed cannot be negative.");
                 }
 
                 this.enemyKilled = value;

@@ -14,7 +14,7 @@
         private const int DefaultDefense = 30;
         private const DragonType DragonType = Characters.Enemy.DragonType.Blue;
 
-        private static readonly Texture2D BlueDragonImage = Assets.blueDragon;
+        private static readonly Texture2D BlueDragonImage = Assets.BlueDragon;
 
         public BlueDragon(Position position)
             : base(position, DefaultAttack, DefaultDefense, DefaultHealth, DefaultDamage, DragonType, BlueDragonImage)
@@ -23,7 +23,7 @@
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            spriteBatch.Draw(Assets.blueDragon, new Vector2(this.Position.XCoord, this.Position.YCoord));
+            spriteBatch.Draw(Assets.BlueDragon, new Vector2(this.Position.XCoord, this.Position.YCoord));
         }
     }
 }

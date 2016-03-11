@@ -10,7 +10,7 @@
     {
         private const int DefaultHealthRestore = 10;
 
-        private static readonly Texture2D ImagePill = Assets.pill;
+        private static readonly Texture2D ImagePill = Assets.Pill;
 
         public Pill(Position position)
             : base(position, ImagePill)

@@ -10,9 +10,9 @@
     public class EnterNameState : State
     {
         private Rectangle doneButton = new Rectangle(120, 500, 350, 200);
-        private Rectangle enterNameButton = new Rectangle(100,300,400,300);
+        private Rectangle enterNameButton = new Rectangle(100, 300, 400, 300);
 
-        private Keys[] lastPressedKeys = new Keys[10];
+        private Keys[] lastPressedKeys = new Keys[Constants.MaxLengthName];
         private string playerName = string.Empty;
 
         public event ButtonClickedEventHandler ButtonClicked;
@@ -26,10 +26,10 @@
         {
             spriteBatch.Begin();
 
-            spriteBatch.Draw(Assets.nameStateBackground, Vector2.Zero);
-            spriteBatch.Draw(Assets.doneButton, this.doneButton, Color.White);
-            spriteBatch.Draw(Assets.enterName, this.enterNameButton, Color.White);
-            spriteBatch.DrawString(Assets.name, this.playerName, new Vector2(200, 430), Color.Black);
+            spriteBatch.Draw(Assets.NameStateBackground, Vector2.Zero);
+            spriteBatch.Draw(Assets.DoneButton, this.doneButton, Color.White);
+            spriteBatch.Draw(Assets.EnterName, this.enterNameButton, Color.White);
+            spriteBatch.DrawString(Assets.Name, this.playerName, new Vector2(200, 430), Color.Black);
 
             spriteBatch.End();
         }

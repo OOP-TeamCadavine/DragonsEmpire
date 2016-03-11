@@ -10,7 +10,7 @@
     {
         private const int DefaultAttackBoost = 50;
 
-        private static readonly Texture2D ImageSword = Assets.sword;
+        private static readonly Texture2D ImageSword = Assets.Sword;
 
         public Sword(Position position)
             : base(position, ImageSword)

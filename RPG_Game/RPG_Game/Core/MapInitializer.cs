@@ -10,14 +10,7 @@
 
     public class MapInitializer
     {
-        public const int MinLength = 100;
-        public const int MapWidth = 1000;
-        public const int MapHeight = 500;
-        private const int NumberOfEnemies = 3;
-        private const int NumberOfItems = 2;
-
         private static readonly Random Rand = new Random();
-
 
         public List<IGameObject> PopulateMap()
         {
@@ -33,24 +26,25 @@
         {
             var allEnemies = Assembly.GetExecutingAssembly().GetTypes()
                 .Where(t => t.IsClass)
-                .Where(t => t.GetCustomAttributes(typeof (EnemyAttribute), false).Any())
+                .Where(t => t.GetCustomAttributes(typeof(EnemyAttribute), false).Any())
                 .ToArray();
 
-            for (int i = 0; i < NumberOfEnemies; i++)
+            for (int i = 0; i < Constants.NumberOfEnemies; i++)
             {
-                int currentXCoord = Rand.Next(MinLength, MapWidth);
-                int currentYCoord = Rand.Next(MinLength, MapHeight);
+                int currentXCoord = Rand.Next(Constants.MinLength, Constants.MapWidth);
+                int currentYCoord = Rand.Next(Constants.MinLength, Constants.MapHeight);
 
                 while (entities.Any(e => e.Position.XCoord == currentXCoord && e.Position.YCoord == currentYCoord))
                 {
-                    currentXCoord = Rand.Next(MinLength, MapWidth);
-                    currentYCoord = Rand.Next(MinLength, MapHeight);
+                    currentXCoord = Rand.Next(Constants.MinLength, Constants.MapWidth);
+                    currentYCoord = Rand.Next(Constants.MinLength, Constants.MapHeight);
                 }
 
                 int entityIndex = Rand.Next(0, allEnemies.Length);
 
-                var entity = Activator.CreateInstance(allEnemies[entityIndex],
-                    new Position(currentXCoord, currentYCoord)) as IGameObject;
+                var entity =
+                    Activator.CreateInstance(allEnemies[entityIndex], new Position(currentXCoord, currentYCoord)) as
+                    IGameObject;
 
                 entities.Add(entity);
 
@@ -64,21 +58,22 @@
                 .Where(t => t.GetCustomAttributes(typeof (ItemAttribute), false).Any())
                 .ToArray();
 
-            for (int i = 0; i < NumberOfItems; i++)
+            for (int i = 0; i < Constants.NumberOfItems; i++)
             {
-                int currentXCoord = Rand.Next(MinLength, MapWidth);
-                int currentYCoord = Rand.Next(MinLength, MapHeight);
+                int currentXCoord = Rand.Next(Constants.MinLength, Constants.MapWidth);
+                int currentYCoord = Rand.Next(Constants.MinLength, Constants.MapHeight);
 
                 while (entities.Any(e => e.Position.XCoord == currentXCoord && e.Position.YCoord == currentYCoord))
                 {
-                    currentXCoord = Rand.Next(MinLength, MapWidth);
-                    currentYCoord = Rand.Next(MinLength, MapHeight);
+                    currentXCoord = Rand.Next(Constants.MinLength, Constants.MapWidth);
+                    currentYCoord = Rand.Next(Constants.MinLength, Constants.MapHeight);
                 }
 
                 int entityIndex = Rand.Next(0, allItems.Length);
 
-                var entity = Activator.CreateInstance(allItems[entityIndex],
-                    new Position(currentXCoord, currentYCoord)) as IGameObject;
+                var entity =
+                    Activator.CreateInstance(allItems[entityIndex], new Position(currentXCoord, currentYCoord)) as
+                    IGameObject;
 
                 entities.Add(entity);
             }

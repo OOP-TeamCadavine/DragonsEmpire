@@ -41,13 +41,13 @@
     <Compile Include="Common\Assets.cs" />
     <Compile Include="Attributes\EnemyAttribute.cs" />
     <Compile Include="Attributes\ItemAttribute.cs" />
+    <Compile Include="Common\Constants.cs" />
     <Compile Include="Common\Score.cs" />
     <Compile Include="Core\CollisionHandler.cs" />
     <Compile Include="Events\ButtonClickedEventArgs.cs" />
     <Compile Include="Events\ButtonClickedEventHandler.cs" />
     <Compile Include="Events\ButtonNames.cs" />
     <Compile Include="Core\GameEngine.cs" />
-    <Compile Include="Exceptions\PlayerNameNullPointerException.cs" />
     <Compile Include="GameObjects\Characters\Character.cs" />
     <Compile Include="GameObjects\Characters\Enemy\BlackDragon.cs" />
     <Compile Include="GameObjects\Characters\Enemy\BlueDragon.cs" />

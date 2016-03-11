@@ -10,7 +10,7 @@
     {
         private const int DefaultHealthRestore = 100;
 
-        private static readonly Texture2D ImageSoup = Assets.soup;
+        private static readonly Texture2D ImageSoup = Assets.Soup;
 
         public HealthSoup(Position position)
             : base(position, ImageSoup)

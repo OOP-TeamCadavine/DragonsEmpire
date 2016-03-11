@@ -10,43 +10,42 @@
 
     public class MainMenuState : State
     {        
-        public event ButtonClickedEventHandler ButtonClicked;
-
-        Rectangle buttonPlayArea = new Rectangle(870, 400, 204, 63);
-        Rectangle buttonScoreArea = new Rectangle(870, 500, 204, 63);
-        Rectangle buttonExitArea = new Rectangle(870, 600, 204, 63);
+        private Rectangle buttonPlayArea = new Rectangle(870, 400, 204, 63);
+        private Rectangle buttonScoreArea = new Rectangle(870, 500, 204, 63);
+        private Rectangle buttonExitArea = new Rectangle(870, 600, 204, 63);
 
         public MainMenuState()
         {
-            
         }
+
+        public event ButtonClickedEventHandler ButtonClicked;
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(Assets.mainMenuImage, Vector2.Zero);
-            spriteBatch.Draw(Assets.buttonPlay, buttonPlayArea, Color.White);
-            spriteBatch.Draw(Assets.buttonScore, buttonScoreArea, Color.White);
-            spriteBatch.Draw(Assets.buttonExit, buttonExitArea, Color.White);
+            spriteBatch.Draw(Assets.MainMenuImage, Vector2.Zero);
+            spriteBatch.Draw(Assets.ButtonPlay, this.buttonPlayArea, Color.White);
+            spriteBatch.Draw(Assets.ButtonScore, this.buttonScoreArea, Color.White);
+            spriteBatch.Draw(Assets.ButtonExit, this.buttonExitArea, Color.White);
             
             spriteBatch.End();
         }
 
         public override void Update(GameTime gameTime)
         {
-            if (buttonPlayArea.Contains(new Point(Mouse.GetState().X, Mouse.GetState().Y)) 
+            if (this.buttonPlayArea.Contains(new Point(Mouse.GetState().X, Mouse.GetState().Y)) 
                 && Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
                 this.OnButtonClicked(ButtonNames.Play);
             }
 
-            if (buttonScoreArea.Contains(new Point(Mouse.GetState().X, Mouse.GetState().Y))
+            if (this.buttonScoreArea.Contains(new Point(Mouse.GetState().X, Mouse.GetState().Y))
                 && Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
                 this.OnButtonClicked(ButtonNames.Scores);
             }
 
-            if (buttonExitArea.Contains(new Point(Mouse.GetState().X, Mouse.GetState().Y))
+            if (this.buttonExitArea.Contains(new Point(Mouse.GetState().X, Mouse.GetState().Y))
                 && Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
                 this.OnButtonClicked(ButtonNames.Exit);

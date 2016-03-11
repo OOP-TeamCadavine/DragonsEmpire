@@ -10,7 +10,7 @@
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(Assets.gameOverBackground, Vector2.Zero);          
+            spriteBatch.Draw(Assets.GameOverBackground, Vector2.Zero);          
             spriteBatch.End();
         }
 
